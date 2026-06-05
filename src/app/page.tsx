@@ -195,7 +195,7 @@ export default function Home() {
               Agencia boutique de viajes personalizados
             </p>
             <h1 className="font-serif text-5xl font-semibold leading-tight tracking-normal md:text-7xl">
-              PRUEBA Viajes a medida para disfrutar con tranquilidad y confianza.
+              Viajes a medida para disfrutar con tranquilidad y confianza.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-white/84">
               Internet vende pasajes. Sello Viajero cuida tu viaje.
