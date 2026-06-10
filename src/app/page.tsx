@@ -1,7 +1,10 @@
+"use client";
+
 import {
   ArrowRight,
   CalendarCheck,
   CheckCircle2,
+  X,
   Compass,
   HeartHandshake,
   Instagram,
@@ -16,6 +19,7 @@ import {
   Users,
 } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
 
 const whatsappBase =
   "https://wa.me/56942664722?text=Hola%20Sello%20Viajero,%20quiero%20cotizar%20un%20viaje";
@@ -104,6 +108,18 @@ const destinations = [
       "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1400&q=90",
     href:
       "https://wa.me/56942664722?text=Hola%20Sello%20Viajero,%20quiero%20cotizar%20un%20viaje%20a%20Aruba",
+    gallery: [
+      ["Eagle Beach", "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=900&q=85"],
+      ["Palm Beach", "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=85"],
+      ["Baby Beach", "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=900&q=85"],
+      ["Flamingo Beach", "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=900&q=85"],
+      ["Oranjestad", "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=900&q=85"],
+      ["Arashi Beach", "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=900&q=85"],
+      ["Natural Pool", "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=900&q=85"],
+      ["California Lighthouse", "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85"],
+      ["Mangel Halto", "https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?auto=format&fit=crop&w=900&q=85"],
+      ["Atardecer en Aruba", "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=900&q=85"],
+    ],
   },
   {
     place: "Caribe",
@@ -113,6 +129,18 @@ const destinations = [
       "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1400&q=90",
     href:
       "https://wa.me/56942664722?text=Hola%20Sello%20Viajero,%20quiero%20cotizar%20un%20viaje%20al%20Caribe",
+    gallery: [
+      ["Punta Cana", "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=900&q=85"],
+      ["Cancun", "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=85"],
+      ["Riviera Maya", "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=900&q=85"],
+      ["Jamaica", "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=900&q=85"],
+      ["Bahamas", "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=900&q=85"],
+      ["Turks and Caicos", "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=900&q=85"],
+      ["Barbados", "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?auto=format&fit=crop&w=900&q=85"],
+      ["Curazao", "https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?auto=format&fit=crop&w=900&q=85"],
+      ["Saint Martin", "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=900&q=85"],
+      ["Isla Mujeres", "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=900&q=85"],
+    ],
   },
   {
     place: "Brasil",
@@ -122,6 +150,22 @@ const destinations = [
       "https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?auto=format&fit=crop&w=1400&q=90",
     href:
       "https://wa.me/56942664722?text=Hola%20Sello%20Viajero,%20quiero%20cotizar%20un%20viaje%20a%20Brasil",
+    gallery: [
+      ["Rio de Janeiro", "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=900&q=85"],
+      ["Copacabana", "https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?auto=format&fit=crop&w=900&q=85"],
+      ["Ipanema", "https://images.unsplash.com/photo-1516834611397-8d633eaec5d0?auto=format&fit=crop&w=900&q=85"],
+      ["Cabo Frio", "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=900&q=85"],
+      ["Isla Grande", "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=900&q=85"],
+      ["Arraial do Cabo", "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=85"],
+      ["Camboriu", "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85"],
+      ["Florianopolis", "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=900&q=85"],
+      ["Natal", "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?auto=format&fit=crop&w=900&q=85"],
+      ["Fortaleza", "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=900&q=85"],
+      ["Bahia", "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=900&q=85"],
+      ["Salvador", "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=900&q=85"],
+      ["Porto de Galinhas", "https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?auto=format&fit=crop&w=900&q=85"],
+      ["Campos do Jordao", "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=900&q=85"],
+    ],
   },
   {
     place: "Cruceros",
@@ -131,6 +175,18 @@ const destinations = [
       "https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=1400&q=90",
     href:
       "https://wa.me/56942664722?text=Hola%20Sello%20Viajero,%20quiero%20cotizar%20un%20crucero",
+    gallery: [
+      ["Caribe Sur", "https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=900&q=85"],
+      ["Caribe Occidental", "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=85"],
+      ["Bahamas en crucero", "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=900&q=85"],
+      ["Mediterraneo", "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85"],
+      ["Islas Griegas", "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=900&q=85"],
+      ["Alaska", "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=85"],
+      ["Fiordos Nordicos", "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=900&q=85"],
+      ["Dubai y Emiratos", "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=85"],
+      ["Panama y Caribe", "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=900&q=85"],
+      ["Brasil y Uruguay", "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=900&q=85"],
+    ],
   },
 ];
 
@@ -170,6 +226,10 @@ const reasons = [
 ];
 
 export default function Home() {
+  const [selectedDestination, setSelectedDestination] = useState<
+    (typeof destinations)[number] | null
+  >(null);
+
   return (
     <main className="min-h-screen text-petrol">
       <header className="fixed left-0 right-0 top-5 z-40 px-4">
@@ -418,19 +478,93 @@ export default function Home() {
               </div>
               <div className="p-6">
                 <p className="min-h-24 leading-7 text-petrol/74">{destination.detail}</p>
-                <a
-                  href={destination.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-softGold px-5 py-3 font-bold text-deepPetrol transition hover:bg-turquoise"
-                >
-                  Cotizar
-                  <ArrowRight className="h-5 w-5" />
-                </a>
+                <div className="mt-6 grid gap-3">
+                  <button
+                    type="button"
+                    onClick={() => setSelectedDestination(destination)}
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-turquoise/25 bg-turquoise/10 px-5 py-3 font-bold text-deepPetrol transition hover:bg-turquoise hover:text-white"
+                  >
+                    Ver mas fotos
+                    <ArrowRight className="h-5 w-5" />
+                  </button>
+                  <a
+                    href={destination.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-softGold px-5 py-3 font-bold text-deepPetrol transition hover:bg-turquoise"
+                  >
+                    Cotizar
+                    <ArrowRight className="h-5 w-5" />
+                  </a>
+                </div>
               </div>
             </article>
           ))}
         </div>
+
+        {selectedDestination && (
+          <div className="fixed inset-0 z-50 overflow-y-auto bg-deepPetrol/82 px-4 py-6 backdrop-blur-sm sm:py-10">
+            <div className="mx-auto max-w-6xl overflow-hidden rounded-2xl bg-white shadow-elegant">
+              <div className="sticky top-0 z-10 flex items-start justify-between gap-4 border-b border-petrol/10 bg-white/95 px-5 py-5 backdrop-blur md:px-8">
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.28em] text-turquoise">
+                    Galeria premium
+                  </p>
+                  <h3 className="mt-2 font-serif text-3xl font-semibold text-deepPetrol md:text-4xl">
+                    {selectedDestination.place}
+                  </h3>
+                  <p className="mt-2 max-w-2xl text-sm leading-6 text-petrol/70">
+                    Mira ideas de lugares y experiencias para inspirar tu proximo viaje.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setSelectedDestination(null)}
+                  aria-label="Cerrar galeria"
+                  className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-petrol/10 text-petrol transition hover:bg-turquoise hover:text-white"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+              </div>
+
+              <div className="grid gap-4 p-5 sm:grid-cols-2 md:p-8 lg:grid-cols-3">
+                {selectedDestination.gallery.map(([name, image]) => (
+                  <article
+                    key={name}
+                    className="group overflow-hidden rounded-xl bg-ivory shadow-sm"
+                  >
+                    <div className="relative h-64 overflow-hidden">
+                      <img
+                        src={image}
+                        alt={`${name} - ${selectedDestination.place}`}
+                        className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-deepPetrol/78 via-transparent to-transparent" />
+                      <h4 className="absolute bottom-4 left-4 right-4 text-2xl font-semibold text-white">
+                        {name}
+                      </h4>
+                    </div>
+                  </article>
+                ))}
+              </div>
+
+              <div className="flex flex-col gap-3 border-t border-petrol/10 bg-ivory px-5 py-5 sm:flex-row sm:items-center sm:justify-between md:px-8">
+                <p className="text-sm font-semibold text-deepPetrol">
+                  Si te gusto este destino, Cindy puede armar una propuesta a tu medida.
+                </p>
+                <a
+                  href={selectedDestination.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-softGold px-6 py-3 font-bold text-deepPetrol transition hover:bg-turquoise"
+                >
+                  Cotizar por WhatsApp
+                  <ArrowRight className="h-5 w-5" />
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
       </section>
 
       <section id="testimonios" className="bg-ivory py-20">
