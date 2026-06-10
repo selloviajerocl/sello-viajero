@@ -50,18 +50,48 @@ const heroSlides = [
 const services = [
   {
     icon: Compass,
-    title: "Viajes personalizados",
-    text: "Diseñamos cada propuesta según tus fechas, presupuesto, ritmo y estilo de viaje.",
+    title: "Destinos",
+    text: "Creamos rutas personalizadas en Chile y el mundo, pensadas para tu estilo de viaje.",
+    image:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=85",
+    href:
+      "https://wa.me/56942664722?text=Hola%20Sello%20Viajero,%20quiero%20informacion%20sobre%20destinos",
+    details: [
+      "Asesoría para elegir destino según fechas, presupuesto y tipo de viaje.",
+      "Opciones para parejas, familias, grupos, empresas y viajes especiales.",
+      "Recomendaciones de vuelos, hoteles, traslados y experiencias.",
+      "Propuesta clara para comparar alternativas antes de reservar.",
+    ],
   },
   {
     icon: Plane,
-    title: "Reservas completas",
-    text: "Coordinamos vuelos, alojamiento, cruceros, traslados y experiencias seleccionadas.",
+    title: "All Inclusive",
+    text: "Paquetes todo incluido para descansar sin preocuparte por cada detalle del viaje.",
+    image:
+      "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=85",
+    href:
+      "https://wa.me/56942664722?text=Hola%20Sello%20Viajero,%20quiero%20cotizar%20un%20All%20Inclusive",
+    details: [
+      "Selección de resorts, hoteles y planes con comidas y servicios incluidos.",
+      "Ideal para Caribe, Brasil, Aruba y escapadas de descanso premium.",
+      "Comparación de categorías, ubicación, beneficios y condiciones.",
+      "Acompañamiento para reservar con tranquilidad y respaldo.",
+    ],
   },
   {
     icon: HeartHandshake,
-    title: "Acompañamiento real",
-    text: "Tienes apoyo humano antes, durante y después de tu viaje.",
+    title: "Cruceros",
+    text: "Itinerarios en crucero para conocer varios destinos con comodidad y experiencia a bordo.",
+    image:
+      "https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=1200&q=85",
+    href:
+      "https://wa.me/56942664722?text=Hola%20Sello%20Viajero,%20quiero%20informacion%20sobre%20cruceros",
+    details: [
+      "Orientación para elegir naviera, ruta, cabina y temporada.",
+      "Opciones para familias, parejas, grupos y celebraciones especiales.",
+      "Información sobre embarque, documentos, excursiones y servicios a bordo.",
+      "Cotización personalizada con alternativas según presupuesto.",
+    ],
   },
 ];
 
@@ -275,27 +305,69 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="servicios" className="bg-white py-20">
-        <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <div className="max-w-2xl">
+      <section id="servicios" className="relative overflow-hidden bg-white py-24">
+        <div className="pointer-events-none absolute left-1/2 top-8 -translate-x-1/2 text-7xl font-black uppercase tracking-[0.08em] text-turquoise/10 md:text-9xl">
+          Servicios
+        </div>
+        <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
             <p className="text-sm font-bold uppercase tracking-[0.28em] text-turquoise">
-              Servicios
+              Nuestros Servicios
             </p>
             <h2 className="mt-4 font-serif text-4xl font-semibold text-deepPetrol md:text-5xl">
-              Planificación premium, sin perder cercanía.
+              Disfruta de principio a fin, nosotros cuidamos los detalles.
             </h2>
+            <p className="mt-5 leading-8 text-petrol/68">
+              Elige el tipo de experiencia que quieres vivir y recibe una propuesta pensada para tu forma de viajar.
+            </p>
           </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {services.map(({ icon: Icon, title, text }) => (
+
+          <div className="mt-14 grid gap-8 lg:grid-cols-3">
+            {services.map(({ icon: Icon, title, text, image, details, href }) => (
               <article
                 key={title}
-                className="rounded-lg border border-petrol/10 bg-ivory p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-elegant"
+                className="group overflow-hidden rounded-xl border border-petrol/10 bg-white shadow-elegant transition duration-300 hover:-translate-y-1"
               >
-                <span className="grid h-14 w-14 place-items-center rounded-full bg-turquoise/12 text-turquoise">
-                  <Icon className="h-7 w-7" />
-                </span>
-                <h3 className="mt-7 text-2xl font-semibold text-deepPetrol">{title}</h3>
-                <p className="mt-4 leading-7 text-petrol/72">{text}</p>
+                <div className="relative h-56 overflow-hidden">
+                  <img
+                    src={image}
+                    alt={`Servicio ${title} de Sello Viajero`}
+                    className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-deepPetrol/64 to-transparent" />
+                  <span className="absolute left-5 top-5 grid h-12 w-12 place-items-center rounded-full bg-white/88 text-turquoise shadow-lg backdrop-blur">
+                    <Icon className="h-6 w-6" />
+                  </span>
+                </div>
+
+                <div className="relative -mt-8 mx-5 rounded-t-xl bg-white px-5 pb-6 pt-5 text-center shadow-sm">
+                  <h3 className="text-2xl font-bold text-softGold">{title}</h3>
+                  <p className="mt-4 min-h-20 leading-7 text-petrol/72">{text}</p>
+
+                  <details className="mt-5 rounded-lg border border-petrol/10 bg-ivory text-left">
+                    <summary className="cursor-pointer list-none px-4 py-3 text-sm font-bold uppercase tracking-[0.08em] text-deepPetrol">
+                      Ver información
+                    </summary>
+                    <ul className="space-y-3 border-t border-petrol/10 px-4 py-4 text-sm leading-6 text-petrol/75">
+                      {details.map((item) => (
+                        <li key={item} className="flex gap-3">
+                          <CheckCircle2 className="mt-0.5 h-4 w-4 flex-none text-turquoise" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </details>
+
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-deepPetrol px-5 py-3 font-semibold text-white transition hover:bg-turquoise hover:text-deepPetrol"
+                  >
+                    Cotizar este servicio
+                    <ArrowRight className="h-5 w-5" />
+                  </a>
+                </div>
               </article>
             ))}
           </div>
