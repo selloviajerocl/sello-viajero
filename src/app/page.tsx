@@ -42,8 +42,8 @@ const heroSlides = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?auto=format&fit=crop&w=2200&q=90",
-    alt: "Skyline de Nueva York en Estados Unidos",
+      "https://images.unsplash.com/photo-1569974498991-d3c12a504f95?auto=format&fit=crop&w=2200&q=90",
+    alt: "Estatua de la Libertad iluminada de noche en Nueva York",
   },
 ];
 
