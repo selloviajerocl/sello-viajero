@@ -172,8 +172,8 @@ const reasons = [
 export default function Home() {
   return (
     <main className="min-h-screen text-petrol">
-      <header className="fixed left-0 right-0 top-5 z-40 px-4">
-        <nav className="sv-nav-enter mx-auto flex max-w-6xl items-center justify-between rounded-2xl border border-white/55 bg-white/70 px-4 py-3 text-deepPetrol shadow-elegant backdrop-blur-md md:px-6">
+      <header className="sticky top-0 z-40 border-b border-petrol/10 bg-[#eef8fb]/95 shadow-md backdrop-blur">
+        <nav className="sv-nav-enter mx-auto flex max-w-7xl items-center justify-between px-4 py-3 text-deepPetrol md:px-6 lg:px-8">
           <a href="#inicio" className="flex items-center">
             <Image
               src="/sello-viajero-logo-web.png"
@@ -182,11 +182,11 @@ export default function Home() {
               height={103}
               priority
               unoptimized
-              className="h-auto w-32 object-contain sm:w-36 md:w-44"
+              className="h-auto w-32 object-contain sm:w-36 md:w-40"
             />
           </a>
 
-          <div className="hidden items-center gap-7 text-sm font-semibold md:flex">
+          <div className="hidden items-center gap-6 text-xs font-bold uppercase tracking-[0.05em] md:flex lg:gap-8">
             {navItems.map(([label, href]) => (
               <a key={label} href={href} className="transition hover:text-turquoise">
                 {label}
@@ -195,10 +195,13 @@ export default function Home() {
           </div>
 
           <div className="hidden items-center gap-3 md:flex">
+            <span className="rounded border border-white/70 bg-white/50 px-3 py-2 text-xs font-bold text-petrol shadow-sm">
+              USD
+            </span>
             <a
               href="#destinos"
               aria-label="Buscar destinos"
-              className="grid h-10 w-10 place-items-center rounded-full text-petrol transition hover:bg-turquoise/12 hover:text-turquoise"
+              className="grid h-10 w-10 place-items-center rounded-full text-turquoise transition hover:bg-white hover:text-deepPetrol"
             >
               <Search className="h-5 w-5" />
             </a>
@@ -207,7 +210,7 @@ export default function Home() {
               target="_blank"
               rel="noreferrer"
               aria-label="Instagram de Sello Viajero"
-              className="grid h-10 w-10 place-items-center rounded-full text-petrol transition hover:bg-turquoise/12 hover:text-turquoise"
+              className="grid h-10 w-10 place-items-center rounded-full text-turquoise transition hover:bg-white hover:text-deepPetrol"
             >
               <Instagram className="h-5 w-5" />
             </a>
@@ -253,36 +256,57 @@ export default function Home() {
         </nav>
       </header>
 
-      <section id="inicio" className="relative grid min-h-screen place-items-center overflow-hidden bg-deepPetrol px-5 py-28 text-center text-white">
-        <div className="absolute inset-0">
-          {heroSlides.map((slide, index) => (
-            <img
-              key={slide.image}
-              src={slide.image}
-              alt={slide.alt}
-              className="sv-hero-slide absolute inset-0 h-full w-full object-cover"
-              style={{ animationDelay: `${index * 6}s` }}
-            />
-          ))}
+      <section id="inicio" className="bg-white">
+        <div className="relative h-28 overflow-hidden md:h-36">
+          <img
+            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=88"
+            alt="Mar turquesa para viajes personalizados"
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-deepPetrol/76 via-petrol/36 to-transparent" />
+          <div className="absolute inset-0 mx-auto flex max-w-7xl items-center justify-end px-5 text-right text-white lg:px-8">
+            <p className="max-w-lg text-sm font-semibold md:text-base">
+              Asesoría personalizada para playas, cruceros, ciudades y experiencias memorables.
+            </p>
+          </div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-deepPetrol/58 via-deepPetrol/28 to-deepPetrol/68" />
-        <div className="absolute inset-0 bg-black/18" />
 
-        <div className="sv-hero-content relative mx-auto max-w-5xl">
-          <p className="text-sm font-bold uppercase tracking-[0.32em] text-softGold md:text-base">
-            BIENVENIDOS A SELLO VIAJERO
-          </p>
-          <h1 className="mt-5 text-5xl font-extrabold leading-tight tracking-normal text-white md:text-7xl lg:text-8xl">
-            EXPERTOS EN LLEVARTE MÁS LEJOS
-          </h1>
-          <a
-            href={whatsappBase}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-9 inline-flex items-center justify-center rounded-full bg-softGold px-9 py-4 text-sm font-bold uppercase tracking-[0.08em] text-deepPetrol shadow-elegant transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-2xl"
-          >
-            CONTÁCTANOS
-          </a>
+        <div className="mx-auto max-w-7xl px-5 py-14 lg:px-8">
+          <div className="text-center">
+            <h1 className="text-3xl font-medium uppercase tracking-[0.08em] text-deepPetrol md:text-4xl">
+              Destinos
+            </h1>
+          </div>
+          <div className="mt-10 grid gap-0 overflow-hidden rounded-sm shadow-elegant md:grid-cols-3">
+            {destinations.slice(0, 3).map((destination) => (
+              <a
+                key={destination.place}
+                href={destination.href}
+                target="_blank"
+                rel="noreferrer"
+                className="group relative block h-64 overflow-hidden md:h-72"
+              >
+                <img
+                  src={destination.image}
+                  alt={`Cotizar viaje a ${destination.place}`}
+                  className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-deepPetrol/72 via-deepPetrol/10 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-6 text-center text-white">
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-white/90">
+                    {destination.place === "Aruba"
+                      ? "Playas de Aruba"
+                      : destination.place === "Caribe"
+                        ? "Caribe All Inclusive"
+                        : "Brasil inolvidable"}
+                  </p>
+                  <span className="mt-3 inline-flex rounded-full bg-softGold px-5 py-2 text-xs font-bold uppercase tracking-[0.08em] text-deepPetrol">
+                    Cotizar
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
