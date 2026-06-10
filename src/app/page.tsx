@@ -46,8 +46,8 @@ const heroSlides = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1569974498991-d3c12a504f95?auto=format&fit=crop&w=2200&q=90",
-    alt: "Estatua de la Libertad iluminada de noche en Nueva York",
+      "https://images.unsplash.com/photo-1534430480872-3498386e7856?auto=format&fit=crop&w=2200&q=90",
+    alt: "Nueva York iluminada de noche con vista premium de la ciudad",
   },
 ];
 
