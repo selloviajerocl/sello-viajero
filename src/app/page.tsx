@@ -10,8 +10,8 @@ import {
   Phone,
   Plane,
   Quote,
+  Search,
   ShieldCheck,
-  Sparkles,
   Star,
   Users,
 } from "lucide-react";
@@ -21,11 +21,30 @@ const whatsappBase =
   "https://wa.me/56942664722?text=Hola%20Sello%20Viajero,%20quiero%20cotizar%20un%20viaje";
 
 const navItems = [
-  ["Inicio", "#inicio"],
-  ["Experiencia", "#experiencia"],
+  ["Home", "#inicio"],
+  ["Nosotros", "#experiencia"],
   ["Destinos", "#destinos"],
-  ["Testimonios", "#testimonios"],
-  ["Cotizar", whatsappBase],
+  ["Paquetes", "#paquetes"],
+  ["Servicios", "#servicios"],
+  ["Contacto", "#cotizacion"],
+];
+
+const heroSlides = [
+  {
+    image:
+      "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=2200&q=90",
+    alt: "Playa paradisíaca del Caribe con aguas turquesas",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=2200&q=90",
+    alt: "Vista elegante de París en Europa",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=2200&q=90",
+    alt: "Ciudad moderna occidental para viajes urbanos",
+  },
 ];
 
 const services = [
@@ -123,8 +142,8 @@ const reasons = [
 export default function Home() {
   return (
     <main className="min-h-screen text-petrol">
-      <header className="fixed left-0 right-0 top-0 z-40 border-b border-petrol/10 bg-white/95 text-deepPetrol shadow-lg backdrop-blur">
-        <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-2 lg:px-8">
+      <header className="fixed left-0 right-0 top-5 z-40 px-4">
+        <nav className="sv-nav-enter mx-auto flex max-w-6xl items-center justify-between rounded-2xl border border-white/55 bg-white/70 px-4 py-3 text-deepPetrol shadow-elegant backdrop-blur-md md:px-6">
           <a href="#inicio" className="flex items-center">
             <Image
               src="/sello-viajero-logo-web.png"
@@ -133,11 +152,11 @@ export default function Home() {
               height={103}
               priority
               unoptimized
-              className="h-auto w-36 object-contain sm:w-40 md:w-48"
+              className="h-auto w-32 object-contain sm:w-36 md:w-44"
             />
           </a>
 
-          <div className="hidden items-center gap-7 text-sm font-medium md:flex">
+          <div className="hidden items-center gap-7 text-sm font-semibold md:flex">
             {navItems.map(([label, href]) => (
               <a key={label} href={href} className="transition hover:text-turquoise">
                 {label}
@@ -145,18 +164,28 @@ export default function Home() {
             ))}
           </div>
 
-          <a
-            href={whatsappBase}
-            target="_blank"
-            rel="noreferrer"
-            className="hidden rounded-full bg-deepPetrol px-5 py-2.5 text-sm font-semibold text-white shadow-lg transition hover:bg-turquoise hover:text-deepPetrol md:inline-flex"
-          >
-            Cotizar viaje
-          </a>
+          <div className="hidden items-center gap-3 md:flex">
+            <a
+              href="#destinos"
+              aria-label="Buscar destinos"
+              className="grid h-10 w-10 place-items-center rounded-full text-petrol transition hover:bg-turquoise/12 hover:text-turquoise"
+            >
+              <Search className="h-5 w-5" />
+            </a>
+            <a
+              href="https://instagram.com/selloviajerocl"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram de Sello Viajero"
+              className="grid h-10 w-10 place-items-center rounded-full text-petrol transition hover:bg-turquoise/12 hover:text-turquoise"
+            >
+              <Instagram className="h-5 w-5" />
+            </a>
+          </div>
 
           <details className="relative md:hidden">
             <summary
-              className="grid h-11 w-11 cursor-pointer list-none place-items-center rounded-full border border-petrol/15"
+              className="grid h-11 w-11 cursor-pointer list-none place-items-center rounded-full border border-petrol/15 bg-white/50"
               aria-label="Abrir menu"
             >
               <Menu className="h-5 w-5" />
@@ -171,78 +200,59 @@ export default function Home() {
                   {label}
                 </a>
               ))}
+              <div className="mt-2 flex gap-2 border-t border-petrol/10 pt-3">
+                <a
+                  href="#destinos"
+                  aria-label="Buscar destinos"
+                  className="grid h-10 w-10 place-items-center rounded-full bg-turquoise/10 text-petrol"
+                >
+                  <Search className="h-5 w-5" />
+                </a>
+                <a
+                  href="https://instagram.com/selloviajerocl"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Instagram de Sello Viajero"
+                  className="grid h-10 w-10 place-items-center rounded-full bg-turquoise/10 text-petrol"
+                >
+                  <Instagram className="h-5 w-5" />
+                </a>
+              </div>
             </div>
           </details>
         </nav>
       </header>
 
-      <section id="inicio" className="relative overflow-hidden bg-deepPetrol pt-24 text-white">
-        <div
-          className="absolute inset-0 opacity-35"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1900&q=88')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-deepPetrol via-deepPetrol/88 to-petrol/48" />
+      <section id="inicio" className="relative grid min-h-screen place-items-center overflow-hidden bg-deepPetrol px-5 py-28 text-center text-white">
+        <div className="absolute inset-0">
+          {heroSlides.map((slide, index) => (
+            <img
+              key={slide.image}
+              src={slide.image}
+              alt={slide.alt}
+              className="sv-hero-slide absolute inset-0 h-full w-full object-cover"
+              style={{ animationDelay: `${index * 6}s` }}
+            />
+          ))}
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-deepPetrol/58 via-deepPetrol/28 to-deepPetrol/68" />
+        <div className="absolute inset-0 bg-black/18" />
 
-        <div className="relative mx-auto grid max-w-7xl gap-12 px-5 pb-20 pt-16 lg:grid-cols-[1.04fr_0.96fr] lg:px-8 lg:pb-24 lg:pt-24">
-          <div className="max-w-3xl">
-            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-softGold/45 bg-white/10 px-4 py-2 text-sm font-semibold text-softGold backdrop-blur">
-              <Star className="h-4 w-4 fill-softGold" />
-              Agencia boutique de viajes personalizados
-            </p>
-            <h1 className="font-serif text-5xl font-semibold leading-tight tracking-normal md:text-7xl">
-              Viajes a medida para disfrutar con tranquilidad y confianza.
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-white/84">
-              Internet vende pasajes. Sello Viajero cuida tu viaje.
-            </p>
-            <p className="mt-4 max-w-2xl text-base leading-8 text-white/72 md:text-lg">
-              Te ayudamos a elegir, comparar y reservar experiencias memorables en playas, cruceros y destinos especiales, con asesoría humana de principio a fin.
-            </p>
-            <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-              <a
-                href={whatsappBase}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-turquoise px-7 py-4 font-semibold text-deepPetrol shadow-elegant transition hover:bg-white"
-              >
-                Cotizar por WhatsApp
-                <ArrowRight className="h-5 w-5" />
-              </a>
-              <a
-                href="#destinos"
-                className="inline-flex items-center justify-center rounded-full border border-white/30 px-7 py-4 font-semibold text-white transition hover:border-softGold hover:text-softGold"
-              >
-                Ver destinos premium
-              </a>
-            </div>
-          </div>
-
-          <div className="grid content-end">
-            <div className="rounded-[2rem] border border-white/18 bg-white/12 p-4 shadow-elegant backdrop-blur md:p-5">
-              <div className="overflow-hidden rounded-[1.5rem]">
-                <img
-                  src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=88"
-                  alt="Resort de lujo frente al mar"
-                  className="h-72 w-full object-cover sm:h-96"
-                />
-              </div>
-              <div className="mt-5 grid grid-cols-3 gap-3 text-center">
-                {["A medida", "Experiencia", "Confianza"].map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-2xl bg-white/12 px-3 py-3 text-sm font-semibold"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
+        <div className="sv-hero-content relative mx-auto max-w-5xl">
+          <p className="text-sm font-bold uppercase tracking-[0.32em] text-softGold md:text-base">
+            BIENVENIDOS A SELLO VIAJERO
+          </p>
+          <h1 className="mt-5 text-5xl font-extrabold leading-tight tracking-normal text-white md:text-7xl lg:text-8xl">
+            EXPERTOS EN LLEVARTE MÁS LEJOS
+          </h1>
+          <a
+            href={whatsappBase}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-9 inline-flex items-center justify-center rounded-full bg-softGold px-9 py-4 text-sm font-bold uppercase tracking-[0.08em] text-deepPetrol shadow-elegant transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-2xl"
+          >
+            CONTÁCTANOS
+          </a>
         </div>
       </section>
 
@@ -292,6 +302,7 @@ export default function Home() {
         </div>
       </section>
 
+      <div id="paquetes" className="scroll-mt-28" />
       <section id="destinos" className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
         <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
           <div className="max-w-2xl">
