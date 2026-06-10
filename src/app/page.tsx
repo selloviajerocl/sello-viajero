@@ -101,7 +101,7 @@ const destinations = [
     detail:
       "Playas de arena blanca, hoteles frente al mar y experiencias ideales para parejas y familias.",
     image:
-      "https://images.unsplash.com/photo-1602002418082-a4443e081dd1?auto=format&fit=crop&w=1200&q=85",
+      "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1400&q=90",
     href:
       "https://wa.me/56942664722?text=Hola%20Sello%20Viajero,%20quiero%20cotizar%20un%20viaje%20a%20Aruba",
   },
@@ -110,7 +110,7 @@ const destinations = [
     detail:
       "Resorts todo incluido, aguas turquesas y descanso diseñado para desconectarte de verdad.",
     image:
-      "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=85",
+      "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1400&q=90",
     href:
       "https://wa.me/56942664722?text=Hola%20Sello%20Viajero,%20quiero%20cotizar%20un%20viaje%20al%20Caribe",
   },
@@ -119,7 +119,7 @@ const destinations = [
     detail:
       "Playas, cultura, gastronomía y rutas vibrantes para viajar en pareja, grupo o familia.",
     image:
-      "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=1200&q=85",
+      "https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?auto=format&fit=crop&w=1400&q=90",
     href:
       "https://wa.me/56942664722?text=Hola%20Sello%20Viajero,%20quiero%20cotizar%20un%20viaje%20a%20Brasil",
   },
@@ -128,7 +128,7 @@ const destinations = [
     detail:
       "Itinerarios premium, comodidad a bordo y varios destinos en una sola experiencia.",
     image:
-      "https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=1200&q=85",
+      "https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=1400&q=90",
     href:
       "https://wa.me/56942664722?text=Hola%20Sello%20Viajero,%20quiero%20cotizar%20un%20crucero",
   },
@@ -400,15 +400,15 @@ export default function Home() {
           {destinations.map((destination) => (
             <article
               key={destination.place}
-              className="group overflow-hidden rounded-lg bg-white shadow-elegant"
+              className="group overflow-hidden rounded-xl bg-white shadow-elegant transition duration-300 hover:-translate-y-1"
             >
-              <div className="relative h-72 overflow-hidden">
+              <div className="relative h-80 overflow-hidden">
                 <img
                   src={destination.image}
                   alt={`Destino ${destination.place}`}
-                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                  className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-deepPetrol/84 via-deepPetrol/10 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-deepPetrol/88 via-deepPetrol/18 to-transparent" />
                 <div className="absolute bottom-0 p-6 text-white">
                   <p className="text-xs font-semibold uppercase tracking-[0.24em] text-softGold">
                     Destino premium
@@ -422,7 +422,7 @@ export default function Home() {
                   href={destination.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-deepPetrol px-5 py-3 font-semibold text-white transition hover:bg-turquoise hover:text-deepPetrol"
+                  className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-softGold px-5 py-3 font-bold text-deepPetrol transition hover:bg-turquoise"
                 >
                   Cotizar
                   <ArrowRight className="h-5 w-5" />
