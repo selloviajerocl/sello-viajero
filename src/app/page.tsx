@@ -45,8 +45,7 @@ const heroSlides = [
     alt: "Vista elegante de París en Europa",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1534430480872-3498386e7856?auto=format&fit=crop&w=2200&q=90",
+    image: "/new-york-city.jpeg",
     alt: "Nueva York iluminada de noche con vista premium de la ciudad",
   },
 ];
