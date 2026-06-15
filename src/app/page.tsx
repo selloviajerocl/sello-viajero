@@ -4,6 +4,8 @@ import {
   ArrowRight,
   CalendarCheck,
   CheckCircle2,
+  ChevronLeft,
+  ChevronRight,
   X,
   Compass,
   HeartHandshake,
@@ -49,6 +51,161 @@ const heroSlides = [
     alt: "Estatua de la Libertad con el skyline de Nueva York",
   },
 ];
+
+type DestinationCard = {
+  place: string;
+  detail: string;
+  image: string;
+  href: string;
+  gallery: [string, string][];
+};
+
+type SpotProfile = {
+  name: string;
+  location: string;
+  description: string;
+  history: string;
+  highlights: string[];
+  activities: string[];
+  useful: {
+    season: string;
+    temperature: string;
+    duration: string;
+    currency: string;
+  };
+  imperdibles: { name: string; text: string; image: string }[];
+};
+
+const imageSet = {
+  rio: [
+    "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=1400&q=90",
+    "https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?auto=format&fit=crop&w=1400&q=90",
+    "https://images.unsplash.com/photo-1516834611397-8d633eaec5d0?auto=format&fit=crop&w=1400&q=90",
+    "https://images.unsplash.com/photo-1544989164-31dc3c645987?auto=format&fit=crop&w=1400&q=90",
+    "https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?auto=format&fit=crop&w=1400&q=90",
+  ],
+  beach: [
+    "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=90",
+    "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1400&q=90",
+    "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1400&q=90",
+    "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1400&q=90",
+    "https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?auto=format&fit=crop&w=1400&q=90",
+  ],
+  city: [
+    "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1400&q=90",
+    "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=90",
+    "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1400&q=90",
+    "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1400&q=90",
+    "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1400&q=90",
+  ],
+  cruise: [
+    "https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=1400&q=90",
+    "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1400&q=90",
+    "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1400&q=90",
+    "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=90",
+    "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1400&q=90",
+  ],
+  hotel: [
+    "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=85",
+    "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=900&q=85",
+    "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=900&q=85",
+  ],
+};
+
+const brazilProfiles: Record<string, Partial<SpotProfile>> = {
+  "Rio de Janeiro": {
+    location: "Estado de Rio de Janeiro, Brasil",
+    highlights: ["Cristo Redentor", "Pan de Azucar", "Escalera Selaron", "Maracana", "Lapa"],
+    activities: [
+      "Subir al Cristo Redentor y al Pan de Azucar",
+      "Caminar por Copacabana e Ipanema",
+      "Vivir una noche con musica en Lapa",
+      "Tomar un paseo panoramico por la bahia",
+    ],
+    history:
+      "Rio fue capital de Brasil y uno de los grandes puertos culturales de America del Sur. Su identidad mezcla historia colonial, samba, arquitectura urbana y paisajes naturales reconocidos mundialmente.",
+  },
+  "Arraial do Cabo": {
+    location: "Region dos Lagos, Rio de Janeiro, Brasil",
+    highlights: ["Praia do Farol", "Prainhas do Pontal", "Gruta Azul", "Paseo en barco"],
+    activities: [
+      "Navegar por playas de aguas transparentes",
+      "Hacer snorkel o buceo",
+      "Visitar miradores naturales",
+      "Disfrutar atardeceres en la costa",
+    ],
+    history:
+      "Arraial do Cabo crecio como villa pesquera y se hizo famoso por sus aguas claras, corrientes frias y biodiversidad marina. Hoy es uno de los destinos mas buscados para playas y paseos nauticos.",
+  },
+  "Isla Grande": {
+    location: "Angra dos Reis, Rio de Janeiro, Brasil",
+    highlights: ["Lopes Mendes", "Lagoa Azul", "Lagoa Verde", "Senderos ecologicos"],
+    activities: [
+      "Hacer trekking entre playas",
+      "Navegar por Lagoa Azul y Lagoa Verde",
+      "Descansar en playas sin autos",
+      "Explorar naturaleza y vida marina",
+    ],
+    history:
+      "Isla Grande conserva una fuerte identidad natural. Durante decadas tuvo acceso limitado, lo que ayudo a proteger su vegetacion, sus senderos y sus playas de aspecto salvaje.",
+  },
+};
+
+function getSpotImages(name: string, destination: string, cover: string) {
+  const normalized = name.toLowerCase();
+  if (destination === "Cruceros") return [cover, ...imageSet.cruise].slice(0, 6);
+  if (["rio de janeiro", "copacabana", "ipanema"].includes(normalized)) {
+    return [cover, ...imageSet.rio].slice(0, 6);
+  }
+  if (["camboriu", "florianopolis", "campos do jordao", "salvador"].includes(normalized)) {
+    return [cover, ...imageSet.city].slice(0, 6);
+  }
+  return [cover, ...imageSet.beach].slice(0, 6);
+}
+
+function getSpotProfile(name: string, destination: DestinationCard): SpotProfile {
+  const isCruise = destination.place === "Cruceros";
+  const isBrazil = destination.place === "Brasil";
+  const preset = brazilProfiles[name] ?? {};
+  const location =
+    preset.location ??
+    (isCruise
+      ? "Ruta internacional en crucero"
+      : isBrazil
+        ? "Brasil"
+        : `${destination.place}, destino turistico internacional`);
+
+  return {
+    name,
+    location,
+    description:
+      `${name} es una alternativa ideal para viajeros que buscan combinar descanso, paisajes memorables y experiencias bien organizadas. Es un destino que puede adaptarse a parejas, familias, grupos de amigos o viajes especiales, porque permite mezclar playa, gastronomia, paseos, compras, cultura y momentos de desconexion. La gracia de viajar con una asesoria personalizada es elegir bien la zona donde alojar, la temporada, el ritmo del itinerario y las actividades que realmente valen la pena segun el presupuesto. En Sello Viajero se puede transformar este destino en una propuesta a medida, comparando opciones de hoteleria, traslados, excursiones y dias recomendados para que el viaje se sienta claro desde el comienzo. Es un lugar perfecto para inspirarse con fotos, imaginar una ruta y luego cotizar una experiencia mas segura, ordenada y pensada para disfrutar sin improvisar.`,
+    history:
+      preset.history ??
+      `${name} ha crecido como destino gracias a su mezcla de paisaje, cultura local y servicios turisticos. Su historia esta ligada al mar, al comercio, a la vida urbana y a la forma en que cada comunidad fue creando una identidad propia para recibir viajeros.`,
+    highlights:
+      preset.highlights ??
+      (isCruise
+        ? ["Vida a bordo", "Excursiones en puerto", "Gastronomia", "Shows nocturnos", "Piscinas y spa"]
+        : ["Playas principales", "Miradores", "Centro turistico", "Gastronomia local", "Atardeceres"]),
+    activities:
+      preset.activities ??
+      (isCruise
+        ? ["Elegir cabina y ruta ideal", "Reservar excursiones", "Disfrutar shows y restaurantes", "Conocer varios destinos en un solo viaje"]
+        : ["Paseos guiados", "Excursiones de dia completo", "Playas y actividades nauticas", "Restaurantes, compras y vida nocturna"]),
+    useful: {
+      season: isBrazil ? "Septiembre a abril; verano ideal para playa" : "Todo el ano, segun clima y temporada",
+      temperature: isBrazil ? "24 a 32 grados aprox." : "22 a 30 grados aprox.",
+      duration: isCruise ? "5 a 10 noches" : "5 a 8 dias recomendados",
+      currency: isBrazil ? "Real brasileno (BRL)" : isCruise ? "Dolar estadounidense a bordo" : "Moneda local segun destino",
+    },
+    imperdibles: (preset.highlights ?? ["Playa principal", "Mirador", "Paseo recomendado", "Centro turistico"]).slice(0, 5).map((item, index) => ({
+      name: item,
+      text: "Un punto clave para sumar al itinerario, tomar fotos y vivir una experiencia representativa del destino.",
+      image: getSpotImages(name, destination.place, destination.image)[index] ?? destination.image,
+    })),
+  };
+}
 
 const services = [
   {
@@ -98,7 +255,7 @@ const services = [
   },
 ];
 
-const destinations = [
+const destinations: DestinationCard[] = [
   {
     place: "Aruba",
     detail:
@@ -228,6 +385,19 @@ export default function Home() {
   const [selectedDestination, setSelectedDestination] = useState<
     (typeof destinations)[number] | null
   >(null);
+  const [selectedSpot, setSelectedSpot] = useState<{
+    name: string;
+    image: string;
+    destination: DestinationCard;
+  } | null>(null);
+
+  const spotProfile = selectedSpot
+    ? getSpotProfile(selectedSpot.name, selectedSpot.destination)
+    : null;
+  const spotImages =
+    selectedSpot && spotProfile
+      ? getSpotImages(selectedSpot.name, selectedSpot.destination.place, selectedSpot.image)
+      : [];
 
   return (
     <main className="min-h-screen text-petrol">
@@ -518,7 +688,10 @@ export default function Home() {
                 </div>
                 <button
                   type="button"
-                  onClick={() => setSelectedDestination(null)}
+                  onClick={() => {
+                    setSelectedDestination(null);
+                    setSelectedSpot(null);
+                  }}
                   aria-label="Cerrar galeria"
                   className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-petrol/10 text-petrol transition hover:bg-turquoise hover:text-white"
                 >
@@ -528,9 +701,17 @@ export default function Home() {
 
               <div className="grid gap-4 p-5 sm:grid-cols-2 md:p-8 lg:grid-cols-3">
                 {selectedDestination.gallery.map(([name, image]) => (
-                  <article
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setSelectedSpot({
+                        name,
+                        image,
+                        destination: selectedDestination,
+                      })
+                    }
                     key={name}
-                    className="group overflow-hidden rounded-xl bg-ivory shadow-sm"
+                    className="group overflow-hidden rounded-xl bg-ivory text-left shadow-sm transition hover:-translate-y-1 hover:shadow-elegant"
                   >
                     <div className="relative h-64 overflow-hidden">
                       <img
@@ -543,7 +724,10 @@ export default function Home() {
                         {name}
                       </h4>
                     </div>
-                  </article>
+                    <div className="p-4">
+                      <p className="text-sm font-semibold text-turquoise">Ver ficha del destino</p>
+                    </div>
+                  </button>
                 ))}
               </div>
 
@@ -561,6 +745,155 @@ export default function Home() {
                   <ArrowRight className="h-5 w-5" />
                 </a>
               </div>
+            </div>
+          </div>
+        )}
+
+        {selectedSpot && spotProfile && (
+          <div className="fixed inset-0 z-[60] overflow-y-auto bg-deepPetrol/88 px-4 py-6 backdrop-blur-md sm:py-10">
+            <div className="mx-auto max-w-6xl overflow-hidden rounded-2xl bg-white shadow-elegant">
+              <div className="relative">
+                <div className="flex snap-x gap-3 overflow-x-auto bg-deepPetrol p-3">
+                  {spotImages.map((image, index) => (
+                    <img
+                      key={`${image}-${index}`}
+                      src={image}
+                      alt={`${spotProfile.name} foto ${index + 1}`}
+                      className="h-[24rem] w-[86%] flex-none snap-center rounded-xl object-cover sm:w-[56%] lg:w-[42%]"
+                    />
+                  ))}
+                </div>
+                <div className="absolute left-4 top-1/2 hidden h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-white/80 text-deepPetrol shadow-md md:grid">
+                  <ChevronLeft className="h-5 w-5" />
+                </div>
+                <div className="absolute right-4 top-1/2 hidden h-11 w-11 -translate-y-1/2 place-items-center rounded-full bg-white/80 text-deepPetrol shadow-md md:grid">
+                  <ChevronRight className="h-5 w-5" />
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setSelectedSpot(null)}
+                  aria-label="Cerrar ficha del destino"
+                  className="absolute right-4 top-4 grid h-11 w-11 place-items-center rounded-full bg-white/90 text-petrol shadow-md transition hover:bg-turquoise hover:text-white"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+              </div>
+
+              <div className="grid gap-8 p-5 md:p-8 lg:grid-cols-[1.1fr_0.9fr]">
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.28em] text-turquoise">
+                    Destino seleccionado
+                  </p>
+                  <h3 className="mt-3 font-serif text-4xl font-semibold text-deepPetrol md:text-5xl">
+                    {spotProfile.name}
+                  </h3>
+                  <p className="mt-2 font-semibold text-petrol/70">{spotProfile.location}</p>
+                  <p className="mt-6 leading-8 text-petrol/76">{spotProfile.description}</p>
+
+                  <div className="mt-8 rounded-xl bg-ivory p-6">
+                    <h4 className="font-serif text-2xl font-semibold text-deepPetrol">
+                      Historia breve
+                    </h4>
+                    <p className="mt-3 leading-7 text-petrol/74">{spotProfile.history}</p>
+                  </div>
+                </div>
+
+                <aside className="rounded-2xl border border-turquoise/18 bg-deepPetrol p-6 text-white">
+                  <h4 className="font-serif text-2xl font-semibold">Informacion util</h4>
+                  <div className="mt-5 grid gap-4 text-sm">
+                    {[
+                      ["Mejor epoca", spotProfile.useful.season],
+                      ["Temperatura promedio", spotProfile.useful.temperature],
+                      ["Duracion recomendada", spotProfile.useful.duration],
+                      ["Moneda local", spotProfile.useful.currency],
+                    ].map(([label, value]) => (
+                      <div key={label} className="rounded-lg bg-white/8 p-4">
+                        <p className="text-xs uppercase tracking-[0.18em] text-softGold">{label}</p>
+                        <p className="mt-1 font-semibold">{value}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <a
+                    href={`https://wa.me/56942664722?text=${encodeURIComponent(
+                      `Hola Sello Viajero, quiero cotizar el destino ${spotProfile.name}`,
+                    )}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-softGold px-6 py-3 font-bold text-deepPetrol transition hover:bg-turquoise hover:text-white"
+                  >
+                    Cotizar este destino
+                    <ArrowRight className="h-5 w-5" />
+                  </a>
+                </aside>
+              </div>
+
+              <div className="grid gap-8 border-t border-petrol/10 p-5 md:p-8 lg:grid-cols-2">
+                <section>
+                  <h4 className="font-serif text-3xl font-semibold text-deepPetrol">Que hacer</h4>
+                  <div className="mt-5 grid gap-3">
+                    {spotProfile.activities.map((activity) => (
+                      <p key={activity} className="flex gap-3 rounded-lg bg-ivory p-4 text-petrol/78">
+                        <CheckCircle2 className="mt-1 h-5 w-5 flex-none text-turquoise" />
+                        {activity}
+                      </p>
+                    ))}
+                  </div>
+                </section>
+
+                <section>
+                  <h4 className="font-serif text-3xl font-semibold text-deepPetrol">
+                    Principales atractivos
+                  </h4>
+                  <div className="mt-5 flex flex-wrap gap-3">
+                    {spotProfile.highlights.map((highlight) => (
+                      <span
+                        key={highlight}
+                        className="rounded-full border border-turquoise/25 bg-turquoise/10 px-4 py-2 text-sm font-semibold text-deepPetrol"
+                      >
+                        {highlight}
+                      </span>
+                    ))}
+                  </div>
+                </section>
+              </div>
+
+              <section className="border-t border-petrol/10 bg-ivory p-5 md:p-8">
+                <h4 className="font-serif text-3xl font-semibold text-deepPetrol">Imperdibles</h4>
+                <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                  {spotProfile.imperdibles.map((item) => (
+                    <article key={item.name} className="overflow-hidden rounded-xl bg-white shadow-sm">
+                      <img src={item.image} alt={item.name} className="h-48 w-full object-cover" />
+                      <div className="p-5">
+                        <h5 className="text-xl font-semibold text-deepPetrol">{item.name}</h5>
+                        <p className="mt-2 text-sm leading-6 text-petrol/72">{item.text}</p>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </section>
+
+              <section className="border-t border-petrol/10 p-5 md:p-8">
+                <h4 className="font-serif text-3xl font-semibold text-deepPetrol">
+                  Hoteles recomendados
+                </h4>
+                <div className="mt-6 grid gap-5 md:grid-cols-3">
+                  {[
+                    ["3 estrellas", "Comodo, bien ubicado y practico para priorizar excursiones.", imageSet.hotel[0]],
+                    ["4 estrellas", "Mejor equilibrio entre ubicacion, servicios y descanso.", imageSet.hotel[1]],
+                    ["5 estrellas", "Experiencia premium con mayor confort, vistas y servicios superiores.", imageSet.hotel[2]],
+                  ].map(([category, text, image]) => (
+                    <article key={category} className="overflow-hidden rounded-xl bg-white shadow-elegant">
+                      <img src={image} alt={`Hotel ${category}`} className="h-52 w-full object-cover" />
+                      <div className="p-5">
+                        <p className="text-xs font-bold uppercase tracking-[0.2em] text-softGold">
+                          Categoria {category}
+                        </p>
+                        <p className="mt-3 leading-6 text-petrol/74">{text}</p>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </section>
             </div>
           </div>
         )}
