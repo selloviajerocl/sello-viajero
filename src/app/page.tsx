@@ -45,8 +45,8 @@ const heroSlides = [
     alt: "Vista elegante de París en Europa",
   },
   {
-    image: "/new-york-city.jpeg",
-    alt: "Nueva York iluminada de noche con vista premium de la ciudad",
+    image: "/new-york-statue-liberty-hero.jpg",
+    alt: "Estatua de la Libertad con el skyline de Nueva York",
   },
 ];
 
