@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import {
   ArrowRight,
@@ -39,12 +39,12 @@ const heroSlides = [
   {
     image:
       "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=2200&q=90",
-    alt: "Playa paradisÃ­aca del Caribe con aguas turquesas",
+    alt: "Playa paradisíaca del Caribe con aguas turquesas",
   },
   {
     image:
       "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=2200&q=90",
-    alt: "Vista elegante de ParÃ­s en Europa",
+    alt: "Vista elegante de París en Europa",
   },
   {
     image: "/new-york-statue-liberty-hero.jpg",
@@ -217,7 +217,7 @@ const services = [
     href:
       "https://wa.me/56942664722?text=Hola%20Sello%20Viajero,%20quiero%20informacion%20sobre%20destinos",
     details: [
-      "AsesorÃ­a para elegir destino segÃºn fechas, presupuesto y tipo de viaje.",
+      "Asesoría para elegir destino según fechas, presupuesto y tipo de viaje.",
       "Opciones para parejas, familias, grupos, empresas y viajes especiales.",
       "Recomendaciones de vuelos, hoteles, traslados y experiencias.",
       "Propuesta clara para comparar alternativas antes de reservar.",
@@ -232,10 +232,10 @@ const services = [
     href:
       "https://wa.me/56942664722?text=Hola%20Sello%20Viajero,%20quiero%20cotizar%20un%20All%20Inclusive",
     details: [
-      "SelecciÃ³n de resorts, hoteles y planes con comidas y servicios incluidos.",
+      "Selección de resorts, hoteles y planes con comidas y servicios incluidos.",
       "Ideal para Caribe, Brasil, Aruba y escapadas de descanso premium.",
-      "ComparaciÃ³n de categorÃ­as, ubicaciÃ³n, beneficios y condiciones.",
-      "AcompaÃ±amiento para reservar con tranquilidad y respaldo.",
+      "Comparación de categorías, ubicación, beneficios y condiciones.",
+      "Acompañamiento para reservar con tranquilidad y respaldo.",
     ],
   },
   {
@@ -247,52 +247,19 @@ const services = [
     href:
       "https://wa.me/56942664722?text=Hola%20Sello%20Viajero,%20quiero%20informacion%20sobre%20cruceros",
     details: [
-      "OrientaciÃ³n para elegir naviera, ruta, cabina y temporada.",
+      "Orientación para elegir naviera, ruta, cabina y temporada.",
       "Opciones para familias, parejas, grupos y celebraciones especiales.",
-      "InformaciÃ³n sobre embarque, documentos, excursiones y servicios a bordo.",
-      "CotizaciÃ³n personalizada con alternativas segÃºn presupuesto.",
+      "Información sobre embarque, documentos, excursiones y servicios a bordo.",
+      "Cotización personalizada con alternativas según presupuesto.",
     ],
   },
 ];
 
 const destinations: DestinationCard[] = [
   {
-    place: "Brasil",
-    detail:
-      "Playas famosas, naturaleza tropical, ciudades vibrantes, cultura, gastronomia y rutas que combinan Rio, Buzios, Arraial do Cabo, Ilha Grande, Florianopolis y Sao Paulo.",
-    image:
-      "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=1400&q=90",
-    href:
-      "https://wa.me/56942664722?text=Hola%20Sello%20Viajero,%20quiero%20cotizar%20un%20viaje%20a%20Brasil",
-    gallery: [
-      ["Rio de Janeiro", "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=900&q=85"],
-      ["Buzios", "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=900&q=85"],
-      ["Arraial do Cabo", "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=85"],
-      ["Ilha Grande", "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=900&q=85"],
-      ["Florianopolis", "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=900&q=85"],
-      ["Sao Paulo", "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=900&q=85"],
-    ],
-  },
-  {
-    place: "Mexico",
-    detail:
-      "Caribe mexicano con playas turquesas, cenotes, cultura maya, parques como Xcaret y combinaciones ideales entre Cancun, Riviera Maya, Tulum e Isla Mujeres.",
-    image:
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=90",
-    href:
-      "https://wa.me/56942664722?text=Hola%20Sello%20Viajero,%20quiero%20cotizar%20un%20viaje%20a%20Mexico",
-    gallery: [
-      ["Cancun", "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=85"],
-      ["Riviera Maya", "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=900&q=85"],
-      ["Tulum", "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=900&q=85"],
-      ["Xcaret", "https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?auto=format&fit=crop&w=900&q=85"],
-      ["Isla Mujeres", "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=900&q=85"],
-    ],
-  },
-  {
     place: "Aruba",
     detail:
-      "Playas de arena blanca sin sargazo, flamencos, atardeceres dorados, Eagle Beach, Palm Beach y un ambiente caribeno perfecto para descansar.",
+      "Playas de arena blanca, hoteles frente al mar y experiencias ideales para parejas y familias.",
     image:
       "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1400&q=90",
     href:
@@ -300,49 +267,91 @@ const destinations: DestinationCard[] = [
     gallery: [
       ["Eagle Beach", "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=900&q=85"],
       ["Palm Beach", "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=85"],
-      ["Renaissance Island", "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=900&q=85"],
-      ["Flamencos", "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=900&q=85"],
+      ["Baby Beach", "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=900&q=85"],
+      ["Flamingo Beach", "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=900&q=85"],
       ["Oranjestad", "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=900&q=85"],
+      ["Arashi Beach", "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=900&q=85"],
+      ["Natural Pool", "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=900&q=85"],
+      ["California Lighthouse", "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85"],
+      ["Mangel Halto", "https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?auto=format&fit=crop&w=900&q=85"],
+      ["Atardecer en Aruba", "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=900&q=85"],
     ],
   },
   {
-    place: "Estados Unidos",
+    place: "Caribe",
     detail:
-      "Ciudades iconicas, parques, compras, museos, playas urbanas y vida cosmopolita entre Nueva York, Orlando, Miami, San Francisco y Los Angeles.",
-    image: "/new-york-statue-liberty-hero.jpg",
-    href:
-      "https://wa.me/56942664722?text=Hola%20Sello%20Viajero,%20quiero%20cotizar%20un%20viaje%20a%20Estados%20Unidos",
-    gallery: [
-      ["Nueva York", "/new-york-statue-liberty-hero.jpg"],
-      ["Orlando", "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85"],
-      ["Miami", "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=85"],
-      ["San Francisco", "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=900&q=85"],
-      ["Los Angeles", "https://images.unsplash.com/photo-1534190760961-74e8c1c5c3da?auto=format&fit=crop&w=900&q=85"],
-    ],
-  },
-  {
-    place: "Punta Cana",
-    detail:
-      "Resorts todo incluido, playas de arena blanca, descanso frente al mar y opciones ideales para familias, parejas, luna de miel y escapadas de romance.",
+      "Resorts todo incluido, aguas turquesas y descanso diseñado para desconectarte de verdad.",
     image:
-      "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1400&q=90",
+      "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1400&q=90",
     href:
-      "https://wa.me/56942664722?text=Hola%20Sello%20Viajero,%20quiero%20cotizar%20un%20viaje%20a%20Punta%20Cana",
+      "https://wa.me/56942664722?text=Hola%20Sello%20Viajero,%20quiero%20cotizar%20un%20viaje%20al%20Caribe",
     gallery: [
-      ["Bavaro", "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=900&q=85"],
-      ["Arena Gorda", "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=900&q=85"],
-      ["Cap Cana", "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=85"],
-      ["Saona", "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=900&q=85"],
-      ["Resorts All Inclusive", "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=900&q=85"],
+      ["Punta Cana", "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=900&q=85"],
+      ["Cancun", "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=85"],
+      ["Riviera Maya", "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=900&q=85"],
+      ["Jamaica", "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=900&q=85"],
+      ["Bahamas", "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=900&q=85"],
+      ["Turks and Caicos", "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=900&q=85"],
+      ["Barbados", "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?auto=format&fit=crop&w=900&q=85"],
+      ["Curazao", "https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?auto=format&fit=crop&w=900&q=85"],
+      ["Saint Martin", "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=900&q=85"],
+      ["Isla Mujeres", "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=900&q=85"],
+    ],
+  },
+  {
+    place: "Brasil",
+    detail:
+      "Playas, cultura, gastronomía y rutas vibrantes para viajar en pareja, grupo o familia.",
+    image:
+      "https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?auto=format&fit=crop&w=1400&q=90",
+    href:
+      "https://wa.me/56942664722?text=Hola%20Sello%20Viajero,%20quiero%20cotizar%20un%20viaje%20a%20Brasil",
+    gallery: [
+      ["Rio de Janeiro", "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=900&q=85"],
+      ["Copacabana", "https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?auto=format&fit=crop&w=900&q=85"],
+      ["Ipanema", "https://images.unsplash.com/photo-1516834611397-8d633eaec5d0?auto=format&fit=crop&w=900&q=85"],
+      ["Cabo Frio", "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=900&q=85"],
+      ["Isla Grande", "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=900&q=85"],
+      ["Arraial do Cabo", "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=85"],
+      ["Camboriu", "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85"],
+      ["Florianopolis", "https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=900&q=85"],
+      ["Natal", "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?auto=format&fit=crop&w=900&q=85"],
+      ["Fortaleza", "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=900&q=85"],
+      ["Bahia", "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=900&q=85"],
+      ["Salvador", "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=900&q=85"],
+      ["Porto de Galinhas", "https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?auto=format&fit=crop&w=900&q=85"],
+      ["Campos do Jordao", "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=900&q=85"],
+    ],
+  },
+  {
+    place: "Cruceros",
+    detail:
+      "Itinerarios premium, comodidad a bordo y varios destinos en una sola experiencia.",
+    image:
+      "https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=1400&q=90",
+    href:
+      "https://wa.me/56942664722?text=Hola%20Sello%20Viajero,%20quiero%20cotizar%20un%20crucero",
+    gallery: [
+      ["Caribe Sur", "https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=900&q=85"],
+      ["Caribe Occidental", "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=85"],
+      ["Bahamas en crucero", "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=900&q=85"],
+      ["Mediterraneo", "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85"],
+      ["Islas Griegas", "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=900&q=85"],
+      ["Alaska", "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=85"],
+      ["Fiordos Nordicos", "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=900&q=85"],
+      ["Dubai y Emiratos", "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=85"],
+      ["Panama y Caribe", "https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=900&q=85"],
+      ["Brasil y Uruguay", "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=900&q=85"],
     ],
   },
 ];
+
 const testimonials = [
   {
     name: "Marcela R.",
     trip: "Viaje familiar al Caribe",
     text:
-      "Nos ayudaron a elegir el hotel perfecto y viajamos con todo claro desde el primer dÃ­a. Se notÃ³ la experiencia.",
+      "Nos ayudaron a elegir el hotel perfecto y viajamos con todo claro desde el primer día. Se notó la experiencia.",
     image:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80",
   },
@@ -350,7 +359,7 @@ const testimonials = [
     name: "Javier y Antonia",
     trip: "Luna de miel en Aruba",
     text:
-      "QuerÃ­amos algo especial y recibimos una propuesta preciosa, bien explicada y adaptada a nuestro presupuesto.",
+      "Queríamos algo especial y recibimos una propuesta preciosa, bien explicada y adaptada a nuestro presupuesto.",
     image:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=300&q=80",
   },
@@ -358,18 +367,18 @@ const testimonials = [
     name: "Claudia M.",
     trip: "Crucero premium",
     text:
-      "La asesorÃ­a fue muy humana. Nos acompaÃ±aron antes y durante el viaje, eso nos dio mucha tranquilidad.",
+      "La asesoría fue muy humana. Nos acompañaron antes y durante el viaje, eso nos dio mucha tranquilidad.",
     image:
       "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=300&q=80",
   },
 ];
 
 const reasons = [
-  "AtenciÃ³n personalizada",
-  "MÃ¡s de 20 aÃ±os de experiencia",
-  "Soporte antes, durante y despuÃ©s del viaje",
+  "Atención personalizada",
+  "Más de 20 años de experiencia",
+  "Soporte antes, durante y después del viaje",
   "Propuestas adaptadas a cada presupuesto",
-  "AsesorÃ­a real y humana",
+  "Asesoría real y humana",
 ];
 
 export default function Home() {
@@ -493,7 +502,7 @@ export default function Home() {
             BIENVENIDOS A SELLO VIAJERO
           </p>
           <h1 className="mt-5 text-5xl font-extrabold leading-tight tracking-normal text-white md:text-7xl lg:text-8xl">
-            EXPERTOS EN LLEVARTE MÃS LEJOS
+            EXPERTOS EN LLEVARTE MÁS LEJOS
           </h1>
           <a
             href={whatsappBase}
@@ -501,7 +510,7 @@ export default function Home() {
             rel="noreferrer"
             className="mt-9 inline-flex items-center justify-center rounded-full bg-softGold px-9 py-4 text-sm font-bold uppercase tracking-[0.08em] text-deepPetrol shadow-elegant transition duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-2xl"
           >
-            CONTÃCTANOS
+            CONTÁCTANOS
           </a>
         </div>
       </section>
@@ -512,15 +521,15 @@ export default function Home() {
             Experiencia y respaldo
           </p>
           <h2 className="mt-4 font-serif text-4xl font-semibold text-deepPetrol md:text-5xl">
-            Viajar bien empieza con una asesorÃ­a real.
+            Viajar bien empieza con una asesoría real.
           </h2>
         </div>
         <div className="text-lg leading-8 text-petrol/80">
           <p>
-            Sello Viajero acompaÃ±a a familias, parejas, grupos y empresas que quieren viajar con claridad, confianza y propuestas seleccionadas con criterio.
+            Sello Viajero acompaña a familias, parejas, grupos y empresas que quieren viajar con claridad, confianza y propuestas seleccionadas con criterio.
           </p>
           <p className="mt-5">
-            La diferencia estÃ¡ en escuchar lo que necesitas, cuidar los detalles y recomendar opciones que tengan sentido para tu presupuesto, tu estilo y la experiencia que quieres vivir.
+            La diferencia está en escuchar lo que necesitas, cuidar los detalles y recomendar opciones que tengan sentido para tu presupuesto, tu estilo y la experiencia que quieres vivir.
           </p>
         </div>
       </section>
@@ -566,7 +575,7 @@ export default function Home() {
 
                   <details className="mt-5 rounded-lg border border-petrol/10 bg-ivory text-left">
                     <summary className="cursor-pointer list-none px-4 py-3 text-sm font-bold uppercase tracking-[0.08em] text-deepPetrol">
-                      Ver informaciÃ³n
+                      Ver información
                     </summary>
                     <ul className="space-y-3 border-t border-petrol/10 px-4 py-4 text-sm leading-6 text-petrol/75">
                       {details.map((item) => (
@@ -616,50 +625,28 @@ export default function Home() {
           </a>
         </div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-5">
+        <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {destinations.map((destination) => (
             <article
               key={destination.place}
-              className="group overflow-hidden rounded-2xl border border-turquoise/10 bg-white shadow-elegant transition duration-300 hover:-translate-y-1 hover:shadow-2xl"
+              className="group overflow-hidden rounded-xl bg-white shadow-elegant transition duration-300 hover:-translate-y-1"
             >
-              <div className="grid h-80 grid-cols-3 grid-rows-2 gap-1 overflow-hidden bg-deepPetrol p-1">
-                {destination.gallery.slice(0, 6).map(([name, image], index) => (
-                  <div
-                    key={name}
-                    className={`relative overflow-hidden rounded-lg ${
-                      index === 0 ? "col-span-2 row-span-2" : ""
-                    }`}
-                  >
-                    <img
-                      src={image}
-                      alt={`${name} - ${destination.place}`}
-                      className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-deepPetrol/76 via-transparent to-transparent" />
-                    <span className="absolute bottom-2 left-2 right-2 rounded-full bg-white/86 px-2 py-1 text-center text-[0.65rem] font-bold uppercase tracking-[0.08em] text-deepPetrol shadow-sm">
-                      {name}
-                    </span>
-                  </div>
-                ))}
+              <div className="relative h-80 overflow-hidden">
+                <img
+                  src={destination.image}
+                  alt={`Destino ${destination.place}`}
+                  className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-deepPetrol/88 via-deepPetrol/18 to-transparent" />
+                <div className="absolute bottom-0 p-6 text-white">
+                  <p className="text-xs font-semibold uppercase tracking-[0.24em] text-softGold">
+                    Destino premium
+                  </p>
+                  <h3 className="mt-2 text-3xl font-semibold">{destination.place}</h3>
+                </div>
               </div>
               <div className="p-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-turquoise">
-                  Destino premium
-                </p>
-                <h3 className="mt-2 text-3xl font-semibold text-deepPetrol">
-                  {destination.place}
-                </h3>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {destination.gallery.slice(0, 5).map(([name]) => (
-                    <span
-                      key={name}
-                      className="rounded-full bg-turquoise/10 px-3 py-1 text-xs font-semibold text-petrol/72"
-                    >
-                      {name}
-                    </span>
-                  ))}
-                </div>
-                <p className="mt-5 min-h-32 leading-7 text-petrol/74">{destination.detail}</p>
+                <p className="min-h-24 leading-7 text-petrol/74">{destination.detail}</p>
                 <div className="mt-6 grid gap-3">
                   <button
                     type="button"
@@ -956,10 +943,10 @@ export default function Home() {
               Diferenciadores
             </p>
             <h2 className="mt-4 font-serif text-4xl font-semibold md:text-5xl">
-              Â¿Por quÃ© viajar con Sello Viajero?
+              ¿Por qué viajar con Sello Viajero?
             </h2>
             <p className="mt-6 max-w-xl leading-8 text-white/72">
-              Porque un viaje importante merece mÃ¡s que una reserva automÃ¡tica: merece criterio, seguimiento y una persona al otro lado.
+              Porque un viaje importante merece más que una reserva automática: merece criterio, seguimiento y una persona al otro lado.
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
@@ -976,15 +963,15 @@ export default function Home() {
       <section id="cotizacion" className="mx-auto grid max-w-7xl gap-10 px-5 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
         <div>
           <p className="text-sm font-bold uppercase tracking-[0.28em] text-turquoise">
-            CotizaciÃ³n personalizada
+            Cotización personalizada
           </p>
           <h2 className="mt-4 font-serif text-4xl font-semibold text-deepPetrol md:text-5xl">
-            CuÃ©ntanos quÃ© viaje tienes en mente.
+            Cuéntanos qué viaje tienes en mente.
           </h2>
           <div className="mt-8 space-y-5 text-petrol/76">
             <p className="flex gap-3">
               <CalendarCheck className="mt-1 h-5 w-5 text-softGold" />
-              RecibirÃ¡s orientaciÃ³n para comparar opciones con mÃ¡s seguridad.
+              Recibirás orientación para comparar opciones con más seguridad.
             </p>
             <p className="flex gap-3">
               <ShieldCheck className="mt-1 h-5 w-5 text-softGold" />
@@ -1017,7 +1004,7 @@ export default function Home() {
               />
             </label>
             <label className="block">
-              <span className="text-sm font-semibold text-deepPetrol">TelÃ©fono</span>
+              <span className="text-sm font-semibold text-deepPetrol">Teléfono</span>
               <input
                 name="telefono"
                 className="mt-2 w-full rounded-lg border border-petrol/15 px-4 py-3 outline-none transition focus:border-turquoise"
@@ -1041,7 +1028,7 @@ export default function Home() {
               />
             </label>
             <label className="block">
-              <span className="text-sm font-semibold text-deepPetrol">NÃºmero de viajeros</span>
+              <span className="text-sm font-semibold text-deepPetrol">Número de viajeros</span>
               <input
                 name="viajeros"
                 type="number"
@@ -1056,7 +1043,7 @@ export default function Home() {
             <textarea
               name="mensaje"
               className="mt-2 min-h-32 w-full rounded-lg border border-petrol/15 px-4 py-3 outline-none transition focus:border-turquoise"
-              placeholder="CuÃ©ntanos presupuesto, tipo de viaje y cualquier detalle importante."
+              placeholder="Cuéntanos presupuesto, tipo de viaje y cualquier detalle importante."
             />
           </label>
           <a
@@ -1124,4 +1111,3 @@ export default function Home() {
     </main>
   );
 }
-
