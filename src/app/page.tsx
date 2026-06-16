@@ -43,8 +43,8 @@ const heroSlides = [
   },
   {
     image:
-      "/paris-night-hero.jpg",
-    alt: "Paris iluminada de noche con puente elegante sobre el rio Sena",
+      "/paris-eiffel-hero.jpg",
+    alt: "Torre Eiffel al atardecer sobre el rio Sena en Paris",
   },
   {
     image: "/rio-christ-hero.jpg",
