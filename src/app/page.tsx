@@ -43,12 +43,12 @@ const heroSlides = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=2200&q=90",
-    alt: "Vista elegante de París en Europa",
+      "/paris-night-hero.jpg",
+    alt: "Paris iluminada de noche con puente elegante sobre el rio Sena",
   },
   {
-    image: "/new-york-statue-liberty-hero.jpg",
-    alt: "Estatua de la Libertad con el skyline de Nueva York",
+    image: "/rio-christ-hero.jpg",
+    alt: "Rio de Janeiro con Cristo Redentor y vista panoramica",
   },
 ];
 
@@ -1111,3 +1111,4 @@ export default function Home() {
     </main>
   );
 }
+
