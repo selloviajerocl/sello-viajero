@@ -502,7 +502,8 @@ export default function Home() {
             BIENVENIDOS A SELLO VIAJERO
           </p>
           <h1 className="mt-5 text-5xl font-extrabold leading-tight tracking-normal text-white md:text-7xl lg:text-8xl">
-            EXPERTOS EN LLEVARTE MÁS LEJOS
+            DISEÑAMOS EXPERIENCIAS
+            <span className="block">IMPULSAMOS CONEXIONES</span>
           </h1>
           <a
             href={whatsappBase}
