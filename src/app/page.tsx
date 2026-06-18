@@ -501,9 +501,9 @@ export default function Home() {
           <p className="text-sm font-bold uppercase tracking-[0.32em] text-softGold md:text-base">
             BIENVENIDOS A SELLO VIAJERO
           </p>
-          <h1 className="mt-5 text-5xl font-extrabold leading-tight tracking-normal text-white md:text-7xl lg:text-8xl">
-            DISEÑAMOS EXPERIENCIAS
-            <span className="block">IMPULSAMOS CONEXIONES</span>
+          <h1 className="mt-6 font-serif text-4xl font-semibold leading-[1.08] text-white md:text-6xl lg:text-7xl">
+            Diseñamos experiencias
+            <span className="mt-3 block text-2xl font-medium tracking-[0.18em] text-white/90 md:text-4xl">IMPULSAMOS CONEXIONES</span>
           </h1>
           <a
             href={whatsappBase}
