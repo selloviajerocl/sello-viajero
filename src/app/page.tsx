@@ -47,7 +47,7 @@ const heroSlides = [
     alt: "Torre Eiffel al atardecer sobre el rio Sena en Paris",
   },
   {
-    image: "/rio-christ-hero.jpg",
+    image: "/rio-cristo-redentor-hero.jpg",
     alt: "Rio de Janeiro con Cristo Redentor y vista panoramica",
   },
 ];
