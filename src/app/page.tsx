@@ -192,8 +192,8 @@ export default function Home() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-white via-white/86 to-white/18" />
         </div>
-        <div className="relative mx-auto grid min-h-[620px] max-w-7xl items-center gap-10 px-5 py-14 lg:grid-cols-[1fr_0.82fr] lg:px-8">
-          <div>
+        <div className="relative mx-auto grid min-h-[620px] max-w-7xl items-center px-5 py-14 lg:px-8">
+          <div className="max-w-3xl">
             <p className="font-serif text-5xl italic leading-none text-[#078f98] md:text-7xl">
               Tu viaje,
             </p>
@@ -240,18 +240,6 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative hidden min-h-[520px] lg:block">
-            <img
-              src="/cindy-vergara-hero.jpg"
-              alt="Cindy Vergara, fundadora de Sello Viajero"
-              className="absolute bottom-0 right-4 h-[520px] w-[390px] rounded-t-[12rem] object-cover object-top shadow-2xl"
-            />
-            <div className="absolute bottom-8 right-0 rounded-3xl bg-[#078f98] px-8 py-5 text-center text-white shadow-2xl">
-              <p className="font-serif text-3xl italic">Cindy Vergara</p>
-              <p className="mt-1 text-sm font-black uppercase">Fundadora de Sello Viajero</p>
-              <p className="mt-1 text-sm">20 anos de experiencia en turismo</p>
-            </div>
-          </div>
         </div>
       </section>
 
