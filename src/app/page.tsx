@@ -243,6 +243,99 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="nosotros" className="bg-white py-16">
+        <div className="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
+          <div className="relative">
+            <div className="overflow-hidden rounded-[2rem] bg-[#edf8f9] shadow-xl">
+              <img
+                src="/cindy-vergara-hero.jpg"
+                alt="Cindy Vergara, fundadora de Sello Viajero"
+                className="h-[34rem] w-full object-cover object-top"
+              />
+            </div>
+            <div className="absolute -bottom-6 left-6 right-6 rounded-3xl bg-[#078f98] px-6 py-5 text-center text-white shadow-2xl">
+              <p className="font-serif text-3xl italic">Cindy Vergara</p>
+              <p className="mt-1 text-sm font-black uppercase tracking-[0.06em]">
+                Fundadora & Directora de Sello Viajero
+              </p>
+            </div>
+          </div>
+
+          <div className="pt-8 lg:pt-0">
+            <p className="text-sm font-black uppercase tracking-[0.22em] text-[#078f98]">
+              Nosotros
+            </p>
+            <h2 className="mt-3 font-serif text-4xl font-semibold leading-tight text-[#073a46] md:text-5xl">
+              En Sello Viajero creemos que cada viaje merece ser tan único como la persona que lo vive.
+            </h2>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {[
+                ["Más de 20 años de experiencia", Plane],
+                ["Destinos en América, Europa y el Caribe", MapPin],
+                ["Atención personalizada", HeartHandshake],
+                ["Viajes corporativos y vacacionales", Building2],
+                ["Cruceros, grupos y viajes a medida", Ship],
+              ].map(([text, Icon]) => (
+                <div key={text as string} className="flex items-center gap-3 rounded-2xl bg-[#edf8f9] p-4">
+                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-white text-[#078f98] shadow-sm">
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <p className="text-sm font-bold leading-5 text-[#073a46]">{text as string}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-9 grid gap-6 md:grid-cols-2">
+              <article className="rounded-3xl border border-[#078f98]/15 bg-white p-6 shadow-sm">
+                <h3 className="text-xl font-black uppercase text-[#078f98]">Nuestra misión</h3>
+                <p className="mt-4 leading-7 text-[#073a46]/78">
+                  Hacer que viajar sea una experiencia simple, segura y memorable, entregando soluciones personalizadas que permitan a cada cliente disfrutar su viaje con total tranquilidad.
+                </p>
+              </article>
+              <article className="rounded-3xl border border-[#078f98]/15 bg-white p-6 shadow-sm">
+                <h3 className="text-xl font-black uppercase text-[#078f98]">Nuestra visión</h3>
+                <p className="mt-4 leading-7 text-[#073a46]/78">
+                  Convertirnos en una agencia de viajes reconocida por la confianza, cercanía y excelencia en el servicio, acompañando a nuestros clientes en cada una de sus aventuras por el mundo.
+                </p>
+              </article>
+            </div>
+
+            <article className="mt-6 rounded-3xl bg-[#073a46] p-7 text-white shadow-xl">
+              <h3 className="text-2xl font-black uppercase text-white">¿Por qué elegir Sello Viajero?</h3>
+              <div className="mt-5 space-y-4 leading-7 text-white/82">
+                <p>Porque detrás de cada cotización hay una persona que realmente conoce la industria.</p>
+                <p>No vendemos un paquete estándar. Escuchamos tus necesidades, buscamos las mejores alternativas y te acompañamos durante todo el proceso para que solo tengas que preocuparte de disfrutar.</p>
+                <p className="font-semibold text-white">
+                  Tu viaje no comienza cuando subes al avión. Comienza cuando decides confiar en nosotros.
+                </p>
+              </div>
+            </article>
+
+            <div className="mt-7 rounded-3xl bg-[#edf8f9] p-7">
+              <h3 className="text-2xl font-black uppercase text-[#078f98]">
+                ¿Qué encontrarás en Sello Viajero?
+              </h3>
+              <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                {[
+                  "Asesoría completamente personalizada.",
+                  "Viajes vacacionales y corporativos.",
+                  "Cruceros, grupos, giras de estudio y viajes especiales.",
+                  "Hoteles, vuelos, traslados, excursiones y seguros.",
+                  "Acompañamiento antes, durante y después del viaje.",
+                  "Propuestas diseñadas según tu presupuesto y tus necesidades.",
+                ].map((item) => (
+                  <p key={item} className="flex gap-3 text-sm font-semibold leading-6 text-[#073a46]">
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#078f98]" />
+                    {item}
+                  </p>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="servicios" className="bg-[#edf8f9] py-9">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <h2 className="text-center text-2xl font-black uppercase text-[#078f98]">
