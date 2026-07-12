@@ -20,7 +20,7 @@ import {
 import Image from "next/image";
 
 const whatsappHref =
-  "https://wa.me/56942664722?text=Hola%20Sello%20Viajero,%20quiero%20cotizar%20mi%20proximo%20viaje";
+  "https://wa.me/56966957801?text=Hola%20Sello%20Viajero,%20quiero%20cotizar%20mi%20proximo%20viaje";
 
 const navItems = [
   ["Inicio", "#inicio"],
@@ -392,7 +392,7 @@ export default function Home() {
           <div>
             <h3 className="font-black uppercase">Contáctanos</h3>
             <div className="mt-4 space-y-2 text-sm text-white/78">
-              <p className="flex gap-2"><Phone className="h-4 w-4" /> +56 9 4266 4722</p>
+              <p className="flex gap-2"><Phone className="h-4 w-4" /> +56 9 6695 7801</p>
               <p className="flex gap-2"><Mail className="h-4 w-4" /> cindyvergarach@gmail.com</p>
               <p className="flex gap-2"><MapPin className="h-4 w-4" /> Santiago, Chile</p>
             </div>
