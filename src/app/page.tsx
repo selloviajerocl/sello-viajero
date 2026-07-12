@@ -242,8 +242,8 @@ export default function Home() {
 
           <div className="relative hidden min-h-[520px] lg:block">
             <img
-              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=850&q=90"
-              alt="Asesora de viajes"
+              src="/cindy-vergara-hero.jpg"
+              alt="Cindy Vergara, fundadora de Sello Viajero"
               className="absolute bottom-0 right-4 h-[520px] w-[390px] rounded-t-[12rem] object-cover object-top shadow-2xl"
             />
             <div className="absolute bottom-8 right-0 rounded-3xl bg-[#078f98] px-8 py-5 text-center text-white shadow-2xl">
