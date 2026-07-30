@@ -1,8 +1,9 @@
 import {
-  ArrowDown,
   ArrowRight,
   Building2,
   CheckCircle2,
+  Clock3,
+  FileCheck2,
   HeartHandshake,
   Instagram,
   Mail,
@@ -11,9 +12,9 @@ import {
   Palmtree,
   Phone,
   Plane,
-  Sailboat,
   ShieldCheck,
   Ship,
+  Sparkles,
   Star,
   Users,
 } from "lucide-react";
@@ -32,14 +33,37 @@ const navItems = [
   ["Contacto", "#contacto"],
 ];
 
-const specialties = [
-  { icon: Palmtree, title: "Viajes vacacionales" },
-  { icon: Building2, title: "Viajes corporativos" },
-  { icon: Ship, title: "Cruceros" },
-  { icon: Users, title: "Grupos y giras de estudio" },
-  { icon: HeartHandshake, title: "Bodas destino" },
-  { icon: ShieldCheck, title: "Seguros de viaje" },
-  { icon: Plane, title: "Aereos, hoteles y traslados" },
+const services = [
+  {
+    icon: Palmtree,
+    title: "Viajes vacacionales",
+    text: "Escapadas familiares, viajes en pareja, lunas de miel y vacaciones a medida con hoteles, vuelos, traslados y experiencias seleccionadas.",
+  },
+  {
+    icon: Building2,
+    title: "Viajes corporativos",
+    text: "Soluciones para empresas, viajes de incentivo, reuniones, traslados ejecutivos y coordinacion para equipos.",
+  },
+  {
+    icon: Ship,
+    title: "Cruceros",
+    text: "Asesoria para elegir naviera, ruta, cabina, temporada y excursiones en cruceros por Caribe, Europa y otros destinos.",
+  },
+  {
+    icon: Users,
+    title: "Grupos y giras",
+    text: "Organizacion de grupos, giras de estudio, viajes especiales y programas con acompanamiento antes, durante y despues.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Seguros y respaldo",
+    text: "Opciones de seguros de viaje, asistencia, condiciones claras y respaldo para viajar con mayor tranquilidad.",
+  },
+  {
+    icon: Plane,
+    title: "Aereos y traslados",
+    text: "Gestion de vuelos, hoteles, traslados, excursiones, asistencia y servicios complementarios en una sola propuesta.",
+  },
 ];
 
 const destinations = [
@@ -48,80 +72,57 @@ const destinations = [
     country: "Republica Dominicana",
     image:
       "https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=900&q=85",
+    text: "Resorts all inclusive, playas de arena blanca y descanso ideal para familias, parejas y celebraciones.",
   },
   {
     name: "Aruba",
-    country: "El paraiso te espera",
+    country: "Caribe",
     image:
       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=85",
+    text: "Playas sin sargazo, atardeceres, Eagle Beach, Palm Beach y una experiencia caribena muy comoda.",
   },
   {
     name: "Riviera Maya",
     country: "Mexico",
     image:
       "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=900&q=85",
+    text: "Cancun, Tulum, cenotes, cultura maya, parques como Xcaret y hoteles para todos los estilos.",
   },
   {
     name: "Rio de Janeiro",
     country: "Brasil",
     image: "/rio-cristo-redentor-hero.jpg",
+    text: "Cristo Redentor, Pan de Azucar, playas iconicas, vida urbana, musica, gastronomia y paisajes memorables.",
   },
   {
     name: "Orlando & Disney",
-    country: "Diversion para todos",
+    country: "Estados Unidos",
     image:
       "https://images.unsplash.com/photo-1597466599360-3b9775841aec?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    name: "Nueva York",
-    country: "Estados Unidos",
-    image: "/new-york-statue-liberty-hero.jpg",
-  },
-  {
-    name: "San Francisco",
-    country: "Estados Unidos",
-    image:
-      "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    name: "Paris",
-    country: "Francia",
-    image: "/paris-eiffel-hero.jpg",
-  },
-  {
-    name: "Turquia",
-    country: "Historia y cultura",
-    image:
-      "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=900&q=85",
-  },
-  {
-    name: "Egipto",
-    country: "Un viaje en el tiempo",
-    image:
-      "https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?auto=format&fit=crop&w=900&q=85",
+    text: "Parques, compras, hoteles familiares, experiencias para ninos y adultos, con planificacion completa.",
   },
   {
     name: "Cruceros",
-    country: "Vive el mar",
+    country: "Rutas internacionales",
     image:
       "https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=900&q=85",
+    text: "Varios destinos en un solo viaje, comodidad a bordo, gastronomia, entretenimiento y excursiones.",
   },
 ];
 
-const steps = [
-  ["Cuentanos tu idea", MessageCircle],
-  ["Ajustamos cada detalle", Star],
-  ["Te enviamos una propuesta personalizada", Mail],
-  ["Reservamos y coordinamos todo por ti", ShieldCheck],
-  ["Tu disfrutas, nosotros estamos contigo", Plane],
+const process = [
+  ["Conversamos", "Cuéntanos fechas, destino, presupuesto y estilo de viaje.", MessageCircle],
+  ["Diseñamos", "Buscamos alternativas reales y armamos una propuesta clara.", Sparkles],
+  ["Reservamos", "Coordinamos vuelos, hoteles, traslados y servicios.", FileCheck2],
+  ["Acompañamos", "Estamos contigo antes, durante y despues del viaje.", HeartHandshake],
 ];
 
 const benefits = [
-  "Mas de 20 anos de experiencia en turismo",
-  "Asesoria 100% personalizada",
-  "Respaldo de los mejores operadores e IATA",
-  "Atencion cercana antes, durante y despues de tu viaje",
-  "Soluciones a medida para personas y empresas",
+  "Mas de 20 anos de experiencia en turismo.",
+  "Atencion cercana y asesoría real.",
+  "Propuestas adaptadas a cada presupuesto.",
+  "Soluciones para personas, familias, grupos y empresas.",
+  "Acompañamiento antes, durante y despues del viaje.",
 ];
 
 const testimonials = [
@@ -148,11 +149,26 @@ const testimonials = [
   },
 ];
 
+const faqs = [
+  [
+    "¿Puedo cotizar un viaje aunque no tenga destino definido?",
+    "Si. Podemos ayudarte a elegir destino segun fechas, presupuesto, cantidad de viajeros y tipo de experiencia.",
+  ],
+  [
+    "¿Trabajan viajes corporativos?",
+    "Si. Coordinamos viajes para empresas, grupos, eventos, incentivos, traslados, alojamiento y servicios complementarios.",
+  ],
+  [
+    "¿La asesoria tiene acompañamiento durante el viaje?",
+    "Si. La idea es que viajes con claridad y respaldo antes, durante y despues de tu experiencia.",
+  ],
+];
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-white text-[#073a46]">
       <header className="sticky top-0 z-50 border-b border-[#dceff1] bg-white/95 shadow-sm backdrop-blur">
-        <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 lg:px-8">
+        <nav className="mx-auto flex max-w-7xl items-center justify-between gap-5 px-5 py-3 lg:px-8">
           <a href="#inicio" className="flex items-center">
             <Image
               src="/sello-viajero-logo-web.png"
@@ -164,7 +180,7 @@ export default function Home() {
               className="h-auto w-40 object-contain md:w-52"
             />
           </a>
-          <div className="hidden items-center gap-7 text-xs font-bold uppercase tracking-[0.04em] text-[#073a46] lg:flex">
+          <div className="hidden items-center gap-6 text-xs font-bold uppercase tracking-[0.04em] text-[#073a46] lg:flex">
             {navItems.map(([label, href]) => (
               <a key={label} href={href} className="transition hover:text-[#078f98]">
                 {label}
@@ -190,56 +206,74 @@ export default function Home() {
             alt="Playa tropical"
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/86 to-white/18" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/88 to-white/22" />
         </div>
-        <div className="relative mx-auto grid min-h-[620px] max-w-7xl items-center px-5 py-14 lg:px-8">
-          <div className="max-w-3xl">
-            <p className="font-serif text-5xl italic leading-none text-[#078f98] md:text-7xl">
-              Tu viaje,
-            </p>
-            <h1 className="mt-1 text-6xl font-black uppercase leading-[0.92] tracking-normal text-[#073a46] md:text-8xl">
-              Tu sello
-            </h1>
-            <p className="mt-7 max-w-2xl text-xl font-medium leading-8 text-[#073a46]/82">
-              Mas de 20 anos creando experiencias inolvidables para que solo te preocupes de disfrutar.
-            </p>
+        <div className="relative mx-auto min-h-[650px] max-w-7xl px-5 py-16 lg:px-8">
+          <div className="grid min-h-[540px] items-center gap-10 lg:grid-cols-[1fr_0.85fr]">
+            <div className="max-w-3xl">
+              <p className="font-serif text-5xl italic leading-none text-[#078f98] md:text-7xl">
+                Tu viaje,
+              </p>
+              <h1 className="mt-1 text-6xl font-black uppercase leading-[0.92] tracking-normal text-[#073a46] md:text-8xl">
+                Tu sello
+              </h1>
+              <p className="mt-7 max-w-2xl text-xl font-medium leading-8 text-[#073a46]/82">
+                Asesoria personalizada para crear viajes seguros, simples y memorables en Chile y el mundo.
+              </p>
 
-            <div className="mt-8 grid max-w-3xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {[
-                ["Asesoria personalizada", Users],
-                ["Respaldo durante tu viaje", ShieldCheck],
-                ["Planificacion completa", CalendarIcon],
-                ["Experiencia y confianza", Star],
-              ].map(([text, Icon]) => (
-                <div key={text as string} className="flex items-center gap-3">
-                  <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-[#073a46]/25 bg-white/70">
-                    <Icon className="h-5 w-5 text-[#073a46]" />
-                  </span>
-                  <p className="text-xs font-black uppercase leading-4 text-[#073a46]">{text as string}</p>
-                </div>
-              ))}
+              <div className="mt-8 grid max-w-3xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                {[
+                  ["Asesoria personalizada", Users],
+                  ["Respaldo durante tu viaje", ShieldCheck],
+                  ["Planificacion completa", Clock3],
+                  ["Experiencia y confianza", Star],
+                ].map(([text, Icon]) => (
+                  <div key={text as string} className="flex items-center gap-3">
+                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-[#073a46]/25 bg-white/70">
+                      <Icon className="h-5 w-5 text-[#073a46]" />
+                    </span>
+                    <p className="text-xs font-black uppercase leading-4 text-[#073a46]">{text as string}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-9 flex flex-col gap-4 sm:flex-row">
+                <a
+                  href={whatsappHref}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#078f98] px-8 py-4 text-sm font-black uppercase text-white shadow-xl transition hover:bg-[#073a46]"
+                >
+                  <MessageCircle className="h-5 w-5" />
+                  Cotiza por WhatsApp
+                </a>
+                <a
+                  href="#servicios"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-[#073a46]/25 bg-white/70 px-8 py-4 text-sm font-black uppercase text-[#073a46] transition hover:border-[#078f98] hover:text-[#078f98]"
+                >
+                  Conoce más
+                  <ArrowRight className="h-5 w-5" />
+                </a>
+              </div>
             </div>
 
-            <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-              <a
-                href={whatsappHref}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#078f98] px-8 py-4 text-sm font-black uppercase text-white shadow-xl transition hover:bg-[#073a46]"
-              >
-                <MessageCircle className="h-5 w-5" />
-                Cotiza por WhatsApp
-              </a>
-              <a
-                href="#servicios"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-[#073a46]/25 bg-white/70 px-8 py-4 text-sm font-black uppercase text-[#073a46] transition hover:border-[#078f98] hover:text-[#078f98]"
-              >
-                Conoce más
-                <ArrowDown className="h-5 w-5" />
-              </a>
-            </div>
+            <aside className="hidden rounded-[2rem] bg-white/70 p-6 shadow-2xl backdrop-blur lg:block">
+              <p className="text-sm font-black uppercase tracking-[0.22em] text-[#078f98]">
+                Agencia boutique
+              </p>
+              <h2 className="mt-3 font-serif text-4xl font-semibold text-[#073a46]">
+                Viajes diseñados con criterio, cercanía y respaldo.
+              </h2>
+              <div className="mt-6 space-y-4">
+                {benefits.slice(0, 4).map((item) => (
+                  <p key={item} className="flex gap-3 text-sm font-semibold leading-6 text-[#073a46]/80">
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#078f98]" />
+                    {item}
+                  </p>
+                ))}
+              </div>
+            </aside>
           </div>
-
         </div>
       </section>
 
@@ -266,16 +300,19 @@ export default function Home() {
               Nosotros
             </p>
             <h2 className="mt-3 font-serif text-4xl font-semibold leading-tight text-[#073a46] md:text-5xl">
-              En Sello Viajero creemos que cada viaje merece ser tan único como la persona que lo vive.
+              Cada viaje merece ser tan único como la persona que lo vive.
             </h2>
+            <p className="mt-6 leading-8 text-[#073a46]/78">
+              Sello Viajero nace para acompañar a personas, familias, grupos y empresas que quieren viajar con tranquilidad. No vendemos un paquete estandar: escuchamos, comparamos alternativas y diseñamos propuestas pensadas para cada presupuesto, destino y estilo de viaje.
+            </p>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {[
                 ["Más de 20 años de experiencia", Plane],
-                ["Destinos en América, Europa y el Caribe", MapPin],
+                ["América, Europa y el Caribe", MapPin],
                 ["Atención personalizada", HeartHandshake],
-                ["Viajes corporativos y vacacionales", Building2],
-                ["Cruceros, grupos y viajes a medida", Ship],
+                ["Corporativo y vacacional", Building2],
+                ["Cruceros y viajes a medida", Ship],
               ].map(([text, Icon]) => (
                 <div key={text as string} className="flex items-center gap-3 rounded-2xl bg-[#edf8f9] p-4">
                   <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-white text-[#078f98] shadow-sm">
@@ -290,129 +327,128 @@ export default function Home() {
               <article className="rounded-3xl border border-[#078f98]/15 bg-white p-6 shadow-sm">
                 <h3 className="text-xl font-black uppercase text-[#078f98]">Nuestra misión</h3>
                 <p className="mt-4 leading-7 text-[#073a46]/78">
-                  Hacer que viajar sea una experiencia simple, segura y memorable, entregando soluciones personalizadas que permitan a cada cliente disfrutar su viaje con total tranquilidad.
+                  Hacer que viajar sea una experiencia simple, segura y memorable, entregando soluciones personalizadas para disfrutar con total tranquilidad.
                 </p>
               </article>
               <article className="rounded-3xl border border-[#078f98]/15 bg-white p-6 shadow-sm">
                 <h3 className="text-xl font-black uppercase text-[#078f98]">Nuestra visión</h3>
                 <p className="mt-4 leading-7 text-[#073a46]/78">
-                  Convertirnos en una agencia de viajes reconocida por la confianza, cercanía y excelencia en el servicio, acompañando a nuestros clientes en cada una de sus aventuras por el mundo.
+                  Ser una agencia reconocida por confianza, cercanía y excelencia, acompañando a nuestros clientes en sus aventuras por el mundo.
                 </p>
               </article>
-            </div>
-
-            <article className="mt-6 rounded-3xl bg-[#073a46] p-7 text-white shadow-xl">
-              <h3 className="text-2xl font-black uppercase text-white">¿Por qué elegir Sello Viajero?</h3>
-              <div className="mt-5 space-y-4 leading-7 text-white/82">
-                <p>Porque detrás de cada cotización hay una persona que realmente conoce la industria.</p>
-                <p>No vendemos un paquete estándar. Escuchamos tus necesidades, buscamos las mejores alternativas y te acompañamos durante todo el proceso para que solo tengas que preocuparte de disfrutar.</p>
-                <p className="font-semibold text-white">
-                  Tu viaje no comienza cuando subes al avión. Comienza cuando decides confiar en nosotros.
-                </p>
-              </div>
-            </article>
-
-            <div className="mt-7 rounded-3xl bg-[#edf8f9] p-7">
-              <h3 className="text-2xl font-black uppercase text-[#078f98]">
-                ¿Qué encontrarás en Sello Viajero?
-              </h3>
-              <div className="mt-5 grid gap-3 sm:grid-cols-2">
-                {[
-                  "Asesoría completamente personalizada.",
-                  "Viajes vacacionales y corporativos.",
-                  "Cruceros, grupos, giras de estudio y viajes especiales.",
-                  "Hoteles, vuelos, traslados, excursiones y seguros.",
-                  "Acompañamiento antes, durante y después del viaje.",
-                  "Propuestas diseñadas según tu presupuesto y tus necesidades.",
-                ].map((item) => (
-                  <p key={item} className="flex gap-3 text-sm font-semibold leading-6 text-[#073a46]">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#078f98]" />
-                    {item}
-                  </p>
-                ))}
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="servicios" className="bg-[#edf8f9] py-9">
+      <section id="servicios" className="bg-[#edf8f9] py-16">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <h2 className="text-center text-2xl font-black uppercase text-[#078f98]">
-            Nos especializamos en
-          </h2>
-          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-7">
-            {specialties.map(({ icon: Icon, title }) => (
-              <article key={title} className="border-r border-[#073a46]/15 px-3 text-center last:border-r-0">
-                <Icon className="mx-auto h-10 w-10 text-[#073a46]" />
-                <p className="mt-4 text-xs font-black uppercase leading-5 text-[#073a46]">{title}</p>
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-sm font-black uppercase tracking-[0.22em] text-[#078f98]">
+              Servicios
+            </p>
+            <h2 className="mt-3 font-serif text-4xl font-semibold text-[#073a46] md:text-5xl">
+              Todo lo que necesitas para viajar bien, en un solo lugar.
+            </h2>
+          </div>
+          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {services.map(({ icon: Icon, title, text }) => (
+              <article key={title} className="rounded-3xl bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+                <Icon className="h-10 w-10 text-[#078f98]" />
+                <h3 className="mt-5 text-xl font-black uppercase text-[#073a46]">{title}</h3>
+                <p className="mt-3 leading-7 text-[#073a46]/72">{text}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="destinos" className="mx-auto max-w-7xl px-5 py-10 lg:px-8">
-        <h2 className="text-center text-2xl font-black uppercase text-[#078f98]">
-          Destinos que inspiran
-        </h2>
-        <div className="mt-7 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+      <section id="destinos" className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+        <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
+          <div>
+            <p className="text-sm font-black uppercase tracking-[0.22em] text-[#078f98]">
+              Inspiración
+            </p>
+            <h2 className="mt-3 font-serif text-4xl font-semibold text-[#073a46] md:text-5xl">
+              Destinos que inspiran
+            </h2>
+          </div>
+          <a href={whatsappHref} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-black text-[#078f98]">
+            Cotizar otro destino
+            <ArrowRight className="h-5 w-5" />
+          </a>
+        </div>
+
+        <div className="mt-9 grid gap-5 sm:grid-cols-2 md:grid-cols-3">
           {destinations.map((destination) => (
-            <article key={destination.name} className="overflow-hidden rounded-xl bg-white shadow-md transition hover:-translate-y-1 hover:shadow-xl">
-              <img src={destination.image} alt={destination.name} className="h-36 w-full object-cover" />
-              <div className="p-4">
-                <h3 className="text-lg font-black uppercase text-[#078f98]">{destination.name}</h3>
-                <p className="text-sm font-semibold text-[#073a46]/70">{destination.country}</p>
+            <article key={destination.name} className="overflow-hidden rounded-3xl bg-white shadow-md transition hover:-translate-y-1 hover:shadow-xl">
+              <img src={destination.image} alt={destination.name} className="h-56 w-full object-cover" />
+              <div className="p-6">
+                <h3 className="text-xl font-black uppercase text-[#078f98]">{destination.name}</h3>
+                <p className="text-sm font-semibold text-[#073a46]/65">{destination.country}</p>
+                <p className="mt-3 leading-7 text-[#073a46]/72">{destination.text}</p>
               </div>
             </article>
           ))}
         </div>
-        <div className="mt-8 text-center">
-          <a
-            href={whatsappHref}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-[#078f98] px-8 py-3 text-sm font-black uppercase text-white transition hover:bg-[#073a46]"
-          >
-            Ver más destinos
-            <ArrowRight className="h-4 w-4" />
-          </a>
+      </section>
+
+      <section id="corporativo" className="bg-[#073a46] py-16 text-white">
+        <div className="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
+          <div>
+            <p className="text-sm font-black uppercase tracking-[0.22em] text-[#7ddbe0]">
+              Corporativo
+            </p>
+            <h2 className="mt-3 font-serif text-4xl font-semibold md:text-5xl">
+              Viajes para empresas, equipos y grupos.
+            </h2>
+            <p className="mt-6 leading-8 text-white/75">
+              Coordinamos viajes corporativos, programas de incentivo, reuniones, giras de estudio y grupos especiales con una gestion clara, ordenada y cercana.
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {[
+              "Cotizaciones comparables y claras.",
+              "Hoteles, vuelos y traslados coordinados.",
+              "Opciones para grupos y empresas.",
+              "Soporte antes, durante y despues del viaje.",
+            ].map((item) => (
+              <p key={item} className="flex gap-3 rounded-2xl bg-white/8 p-5 font-semibold leading-7 text-white/86">
+                <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-[#7ddbe0]" />
+                {item}
+              </p>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section id="corporativo" className="bg-[#edf8f9] py-10">
-        <div className="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[1.2fr_0.8fr] lg:px-8">
-          <div>
-            <h2 className="text-2xl font-black uppercase text-[#078f98]">Cómo trabajamos</h2>
-            <p className="mt-1 font-serif text-3xl italic text-[#078f98]">Así de simple, así de personal</p>
-            <div className="mt-8 grid gap-5 sm:grid-cols-5">
-              {steps.map(([label, Icon], index) => (
-                <article key={label as string} className="relative text-center">
-                  <span className="mx-auto grid h-9 w-9 place-items-center rounded-full bg-[#078f98] text-sm font-black text-white">
-                    {index + 1}
-                  </span>
-                  <Icon className="mx-auto mt-4 h-9 w-9 text-[#073a46]" />
-                  <p className="mt-3 text-xs font-bold leading-5 text-[#073a46]">{label as string}</p>
-                </article>
-              ))}
-            </div>
+      <section className="bg-[#edf8f9] py-16">
+        <div className="mx-auto max-w-7xl px-5 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-sm font-black uppercase tracking-[0.22em] text-[#078f98]">
+              Proceso
+            </p>
+            <h2 className="mt-3 font-serif text-4xl font-semibold text-[#073a46] md:text-5xl">
+              Así trabajamos tu viaje
+            </h2>
           </div>
-          <div>
-            <h2 className="text-2xl font-black uppercase text-[#078f98]">¿Por qué elegirnos?</h2>
-            <div className="mt-6 space-y-3">
-              {benefits.map((benefit) => (
-                <p key={benefit} className="flex gap-3 text-sm font-semibold text-[#073a46]">
-                  <CheckCircle2 className="h-5 w-5 shrink-0 text-[#078f98]" />
-                  {benefit}
-                </p>
-              ))}
-            </div>
+          <div className="mt-10 grid gap-5 md:grid-cols-4">
+            {process.map(([title, text, Icon], index) => (
+              <article key={title as string} className="rounded-3xl bg-white p-6 text-center shadow-sm">
+                <span className="mx-auto grid h-10 w-10 place-items-center rounded-full bg-[#078f98] text-sm font-black text-white">
+                  {index + 1}
+                </span>
+                <Icon className="mx-auto mt-5 h-10 w-10 text-[#073a46]" />
+                <h3 className="mt-4 text-lg font-black uppercase text-[#078f98]">{title as string}</h3>
+                <p className="mt-3 text-sm leading-6 text-[#073a46]/72">{text as string}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
       <section id="testimonios" className="grid lg:grid-cols-2">
-        <div className="relative overflow-hidden bg-[#078f98] px-5 py-10 text-white lg:px-14">
+        <div className="relative overflow-hidden bg-[#078f98] px-5 py-14 text-white lg:px-14">
           <img
             src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1200&q=85"
             alt="Playa testimonial"
@@ -434,7 +470,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div id="contacto" className="bg-[#f8fbfb] px-5 py-10 lg:px-14">
+        <div id="contacto" className="bg-[#f8fbfb] px-5 py-14 lg:px-14">
           <h2 className="text-2xl font-black uppercase text-[#078f98]">Cotiza tu próximo viaje</h2>
           <p className="mt-2 text-sm text-[#073a46]/70">Déjanos tus datos y te contactaremos a la brevedad.</p>
           <form className="mt-6 grid gap-4">
@@ -454,6 +490,22 @@ export default function Home() {
               Enviar solicitud
             </a>
           </form>
+        </div>
+      </section>
+
+      <section className="bg-white py-16">
+        <div className="mx-auto max-w-5xl px-5 lg:px-8">
+          <h2 className="text-center font-serif text-4xl font-semibold text-[#073a46] md:text-5xl">
+            Preguntas frecuentes
+          </h2>
+          <div className="mt-8 grid gap-4">
+            {faqs.map(([question, answer]) => (
+              <article key={question} className="rounded-3xl border border-[#078f98]/15 bg-[#f8fbfb] p-6">
+                <h3 className="text-lg font-black text-[#078f98]">{question}</h3>
+                <p className="mt-3 leading-7 text-[#073a46]/75">{answer}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -504,25 +556,5 @@ export default function Home() {
         </p>
       </footer>
     </main>
-  );
-}
-
-function CalendarIcon(props: React.ComponentProps<typeof CalendarIconBase>) {
-  return <CalendarIconBase {...props} />;
-}
-
-function CalendarIconBase(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-      <path d="M8 2v4" />
-      <path d="M16 2v4" />
-      <rect width="18" height="18" x="3" y="4" rx="2" />
-      <path d="M3 10h18" />
-      <path d="M8 14h.01" />
-      <path d="M12 14h.01" />
-      <path d="M16 14h.01" />
-      <path d="M8 18h.01" />
-      <path d="M12 18h.01" />
-    </svg>
   );
 }
